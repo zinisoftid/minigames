@@ -53,8 +53,7 @@ const maxVolumn = minigame.gameSound.maxVolumn;
 let playTimes = minigame.playTimes;
 let timeStep = minigame.gameTime.timeStep;
 let audioRatio = minigame.gameSound.audioRatio;
-let updatedTime =
-  parseInt(getCookie("gameTime"), 10) * 10 || minigame.initTimeRemainder;
+let updatedTime = GAME_SETTINGS.get("gameTime") * 10;
 
   // Check if already in game
 let checked = false;
@@ -358,6 +357,7 @@ GUESSME.initialize = () => {
   GUESSME.settingTools();
   GUESSME.createSettingPage();
   GUESSME.saveSetting();
+  GUESSME.resetSetting();
   GUESSME.handleRedirect();
   GUESSME.addProduct();
   GUESSME.deleteProduct();
@@ -552,7 +552,7 @@ GUESSME.createSettingPage = () => {
   addButtonContent1.append(addButton1);
   settingItemWrapper1.append(addButtonContent1);
 
-  if ($("input[id^='upload-product-img']").length >= 4) {
+  if ($("input[id^='upload-product-img']").length >= GAME_CONFIG.limits.maxProducts) {
     $("#product-add-button").css("display", "none");
     $("#product-add-button").parent().css("display", "none");
   } else {
@@ -628,7 +628,7 @@ GUESSME.createSettingPage = () => {
   addButtonContent.append(addButton);
   settingItemWrapper.append(addButtonContent);
 
-  if ($("input[id^='upload-character-img']").length >= 4) {
+  if ($("input[id^='upload-character-img']").length >= GAME_CONFIG.limits.maxCharacters) {
     $("#character-add-button").css("display", "none");
     $("#character-add-button").parent().css("display", "none");
   } else {
@@ -636,88 +636,30 @@ GUESSME.createSettingPage = () => {
     $("#character-add-button").css("display", "block");
   }
 
-  // Load values from cookies or fallback to default
-  const countDownTimeCookie = getCookie("countDownTime");
-  const productScoreCookie = getCookie("productScore");
-  const difficultyLevelCookie = getCookie("difficultyLevel");
-  const maxRequiredProductsCookie = getCookie("maxRequiredProducts");
-  const levelTimeCookie = getCookie("levelTime");
-  const gameTimeCookie = getCookie("gameTime");
-
-  if (countDownTimeCookie !== "") {
-    $("#count-down-input").val(countDownTimeCookie);
-  } else {
-    $("#count-down-input").val(minigame.gameTime.countDownTime);
-  }
-
-  if (productScoreCookie !== "") {
-    $("#product-score-input").val(productScoreCookie);
-  } else {
-    $("#product-score-input").val(minigame.productScore);
-  }
-
-  if (difficultyLevelCookie !== "") {
-    $("#difficulty-level-input").val(difficultyLevelCookie);
-  } else {
-    $("#difficulty-level-input").val(minigame.difficultyLevel);
-  }
-
-  if (maxRequiredProductsCookie !== "") {
-    $("#max-product-input").val(maxRequiredProductsCookie);
-  } else {
-    $("#max-product-input").val(minigame.maxRequiredProducts);
-  }
-
-  if (levelTimeCookie !== "") {
-    $("#level-time-input").val(levelTimeCookie);
-  } else {
-    $("#level-time-input").val(
-      (minigame.initTimeRemainder * minigame.maxPlayTimes) / 10
-    );
-  }
-
-  if (gameTimeCookie !== "") {
-    $("#game-time-input").val(gameTimeCookie);
-  } else {
-    $("#game-time-input").val(minigame.initTimeRemainder / 10);
-  }
+  // Form values: the player's saved value, else the default from config.json
+  Object.keys(GUESSME.settingInputs).forEach((name) => {
+    $(GUESSME.settingInputs[name]).val(GAME_SETTINGS.get(name));
+  });
 };
 
-// Function to set a cookie
-function setCookie(name, value, days) {
-  const date = new Date();
-  date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-  const expires = "expires=" + date.toUTCString();
-  document.cookie = name + "=" + value + ";" + expires + ";path=/";
-}
-
-// Function to get a cookie value
-function getCookie(name) {
-  const cookieName = name + "=";
-  const cookies = document.cookie.split(";");
-  for (let i = 0; i < cookies.length; i++) {
-    let cookie = cookies[i].trim();
-    if (cookie.indexOf(cookieName) === 0) {
-      return cookie.substring(cookieName.length, cookie.length);
-    }
-  }
-  return "";
-}
+// Settings stored per name, and the form input that edits each
+GUESSME.settingInputs = {
+  countDownTime: "#count-down-input",
+  gameTime: "#game-time-input",
+  productScore: "#product-score-input",
+  maxRequiredProducts: "#max-product-input",
+  levelTime: "#level-time-input",
+  difficultyLevel: "#difficulty-level-input",
+};
 
 // Save setting(s)
 GUESSME.saveSetting = () => {
-  // Save values to cookies on button click
+  // Save values on button click
   $("#save-setting-button").on("click", (e) => {
     e.preventDefault();
     let checkDataInputs = true;
     let checkProductEmpty = false;
     let checkCharacterEmpty = false;
-    const countDownTime = $("#count-down-input").val();
-    const productScore = $("#product-score-input").val();
-    const difficultyLevel = $("#difficulty-level-input").val();
-    const maxRequiredProducts = $("#max-product-input").val();
-    const levelTime = $("#level-time-input").val();
-    const gameTime = $("#game-time-input").val();
 
     $.each($("input[id^='upload-product-img']"), (index, item) => {
       if (
@@ -765,13 +707,10 @@ GUESSME.saveSetting = () => {
     });
 
     if ($("#settingForm").valid() && checkDataInputs === true) {
-      // Save values to cookies with a 365-day expiration
-      setCookie("countDownTime", countDownTime, 365);
-      setCookie("productScore", productScore, 365);
-      setCookie("difficultyLevel", difficultyLevel, 365);
-      setCookie("maxRequiredProducts", maxRequiredProducts, 365);
-      setCookie("levelTime", levelTime, 365);
-      setCookie("gameTime", gameTime, 365);
+      const values = {};
+      Object.keys(GUESSME.settingInputs).forEach((name) => {
+        values[name] = parseInt($(GUESSME.settingInputs[name]).val(), 10);
+      });
 
       const arrProducts = [];
       $.each($("input[id^='upload-product-img']"), (index, item) => {
@@ -784,20 +723,26 @@ GUESSME.saveSetting = () => {
             .next()
             .find(".setting-item-input")
             .val(),
-          score:
-            parseInt(getCookie("productScore"), 10) || minigame.productScore,
+          score: values.productScore,
         });
       });
       const arrCharacters = [];
       $.each($("input[id^='upload-character-img']"), (index, item) => {
+        const url = $(item).next().text();
+        // Keep the active picture of a character whose normal picture did not change
+        const known = minigame.listCharacters.find((c) => c.url === url);
         arrCharacters.push({
-          url: $(item).next().text(),
-          activeUrl: $(item).next().text(),
+          url: url,
+          activeUrl: known ? known.activeUrl : url,
         });
       });
 
-      setCookie("arrCharacters", JSON.stringify(arrCharacters), 365);
-      setCookie("arrProducts", JSON.stringify(arrProducts), 365);
+      GAME_SETTINGS.setMany(
+        Object.assign(values, {
+          products: arrProducts,
+          characters: arrCharacters,
+        })
+      );
 
       alertify.success($.i18n("saveSuccess") + "<br>" + $.i18n("reloadPage"));
 
@@ -822,13 +767,26 @@ GUESSME.saveSetting = () => {
   });
 };
 
+// Restore defaults: forget everything the player saved
+GUESSME.resetSetting = () => {
+  $("#reset-setting-button").on("click", (e) => {
+    e.preventDefault();
+    alertify
+      .confirm($.i18n("resetConfirm"), function () {
+        GAME_SETTINGS.reset();
+        alertify.success($.i18n("resetDone") + "<br>" + $.i18n("reloadPage"));
+      })
+      .set({
+        title: $.i18n("alertTitle"),
+        labels: { ok: $.i18n("ok"), cancel: $.i18n("cancel") },
+      });
+  });
+};
+
 // Add character
 GUESSME.addCharacter = () => {
   // Character handler
-  let maxCharacterIndex =
-    getCookie("arrCharacters") !== ""
-      ? JSON.parse(getCookie("arrCharacters")).length
-      : 4;
+  let maxCharacterIndex = GAME_SETTINGS.get("characters").length;
   $("#character-add-button").on("click", () => {
     maxCharacterIndex += 1;
 
@@ -874,7 +832,7 @@ GUESSME.addCharacter = () => {
     settingItemContent.append(settingItem);
     settingItemWrapper.append(settingItemContent);
 
-    if ($("input[id^='upload-character-img']").length >= 4) {
+    if ($("input[id^='upload-character-img']").length >= GAME_CONFIG.limits.maxCharacters) {
       $("#character-add-button").css("display", "none");
       $("#character-add-button").parent().css("display", "none");
     }
@@ -898,17 +856,9 @@ GUESSME.deleteCharacter = () => {
         alertify.confirm(
           $.i18n("confirmDeleteCharacter"),
           function () {
-            const arrCharactersCookie = getCookie("arrCharacters");
-            if (arrCharactersCookie !== "") {
-              const arrCharacters = JSON.parse(arrCharactersCookie);
-              arrCharacters.splice(index, 1);
-              setCookie("arrCharacters", JSON.stringify(arrCharacters), 365);
-            } else {
-              const arrCharacters = minigame.listCharacters;
-              arrCharacters.splice(index, 1);
-
-              setCookie("arrCharacters", JSON.stringify(arrCharacters), 365);
-            }
+            const arrCharacters = GAME_SETTINGS.get("characters").slice();
+            arrCharacters.splice(index, 1);
+            GAME_SETTINGS.set("characters", arrCharacters);
             alertify.success(
               $.i18n("deleteSuccess") + "<br>" + $.i18n("reloadPage")
             );
@@ -916,7 +866,10 @@ GUESSME.deleteCharacter = () => {
           function () {
             alertify.error($.i18n("deleteFail"));
           }
-        );
+        ).set({
+          title: $.i18n("alertTitle"),
+          labels: { ok: $.i18n("ok"), cancel: $.i18n("cancel") },
+        });
       });
   });
 };
@@ -924,10 +877,7 @@ GUESSME.deleteCharacter = () => {
 // Add product
 GUESSME.addProduct = () => {
   // Product handler
-  let maxProductIndex =
-    getCookie("arrProducts") !== ""
-      ? JSON.parse(getCookie("arrProducts")).length
-      : 4;
+  let maxProductIndex = GAME_SETTINGS.get("products").length;
   maxProductIndex += 1;
 
   $("#product-add-button").on("click", () => {
@@ -995,7 +945,7 @@ GUESSME.addProduct = () => {
     settingItemContent.append(settingItem1, settingItem2);
     settingItemWrapper1.append(settingItemContent);
 
-    if ($("input[id^='upload-product-img']").length >= 4) {
+    if ($("input[id^='upload-product-img']").length >= GAME_CONFIG.limits.maxProducts) {
       $("#product-add-button").css("display", "none");
       $("#product-add-button").parent().css("display", "none");
     }
@@ -1021,17 +971,9 @@ GUESSME.deleteProduct = () => {
         alertify.confirm(
           $.i18n("confirmDeleteProduct"),
           function () {
-            const arrProductsCookie = getCookie("arrProducts");
-            if (arrProductsCookie !== "") {
-              const arrProducts = JSON.parse(arrProductsCookie);
-              arrProducts.splice(index, 1);
-              setCookie("arrProducts", JSON.stringify(arrProducts), 365);
-            } else {
-              const arrProducts = minigame.listProducts;
-              arrProducts.splice(index, 1);
-
-              setCookie("arrProducts", JSON.stringify(arrProducts), 365);
-            }
+            const arrProducts = GAME_SETTINGS.get("products").slice();
+            arrProducts.splice(index, 1);
+            GAME_SETTINGS.set("products", arrProducts);
             alertify.success(
               $.i18n("deleteSuccess") + "<br>" + $.i18n("reloadPage")
             );
@@ -1039,7 +981,10 @@ GUESSME.deleteProduct = () => {
           function () {
             alertify.error($.i18n("deleteFail"));
           }
-        );
+        ).set({
+          title: $.i18n("alertTitle"),
+          labels: { ok: $.i18n("ok"), cancel: $.i18n("cancel") },
+        });
       });
   });
 };

@@ -83,8 +83,6 @@
   "requiredEnterProduct": "Please fill in all product information!",
   "requiredEnterCharacter": "Please fill in all character information!",
   "requiredEnterGeneral": "Please fill in all general settings!",
-  "limitProducts": "You can have at most $1 products.",
-  "limitCharacters": "You can have at most $1 characters.",
   "alertTitle": "Warning",
   "ok": "OK",
   "cancel": "Cancel",

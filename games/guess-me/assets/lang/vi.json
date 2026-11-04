@@ -83,8 +83,6 @@
   "requiredEnterProduct": "Vui lòng nhập đầy đủ thông tin sản phẩm!",
   "requiredEnterCharacter": "Vui lòng nhập đầy đủ thông tin nhân vật!",
   "requiredEnterGeneral": "Vui lòng nhập đầy đủ cài đặt chung!",
-  "limitProducts": "Tối đa $1 sản phẩm.",
-  "limitCharacters": "Tối đa $1 nhân vật.",
   "alertTitle": "Cảnh báo",
   "ok": "OK",
   "cancel": "Hủy",

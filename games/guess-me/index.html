@@ -386,11 +386,11 @@
                 <div class="table-wrapper">
                   <table class="rank-site-content">
                     <tr>
-                      \1 data-i18n="colRank">No</th>
-                      \1 data-i18n="colName">Full name</th>
-                      \1 data-i18n="colEmail">Email</th>
-                      \1 data-i18n="colPhone">Phone</th>
-                      \1 data-i18n="colScore">Score</th>
+                      <th class="fixed-column" id="stt-col" data-i18n="colRank">No</th>
+                      <th id="name-col" data-i18n="colName">Full name</th>
+                      <th id="email-col" data-i18n="colEmail">Email</th>
+                      <th id="phone-col" data-i18n="colPhone">Phone</th>
+                      <th id="score-col" data-i18n="colScore">Score</th>
                     </tr>
                     <tr>
                       <td class="fixed-column">
@@ -495,14 +495,14 @@
               <div class="setting-page-container">
                 <div class="setting-container">
                   <div class="setting-content">
-                    \1 data-i18n="productsTitle">Products</div>
+                    <div class="setting-title" id="product-setting" data-i18n="productsTitle">Products</div>
                     <div
                       class="setting-item-wrapper"
                       id="setting-item-wrapper-1"
                     ></div>
                   </div>
                   <div class="setting-content" style="padding-left: 16px">
-                    \1 data-i18n="charactersTitle">Characters</div>
+                    <div class="setting-title" id="character-setting" data-i18n="charactersTitle">Characters</div>
                     <div
                       class="setting-item-wrapper"
                       id="setting-item-wrapper-2"
@@ -511,7 +511,7 @@
                 </div>
                 <div class="setting-container">
                   <div class="setting-content general-setting">
-                    \1 data-i18n="generalTitle">General</div>
+                    <div class="setting-title" id="general-setting" data-i18n="generalTitle">General</div>
                     <form
                       class="setting-item-wrapper general-setting-wrapper"
                       id="settingForm"
@@ -658,7 +658,17 @@
                       </div>
                       <button
                         class="primary-button"
-                        \1data-i18n="save"\n                      >Save</button>
+                        id="save-setting-button"
+                        style="margin-top: 24px"
+                        data-i18n="save"
+                      >Save</button>
+                      <button
+                        type="button"
+                        class="primary-button"
+                        id="reset-setting-button"
+                        style="margin-top: 24px"
+                        data-i18n="resetDefaults"
+                      >Restore defaults</button>
                     </form>
                   </div>
                 </div>
@@ -772,7 +782,10 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="../../shared/i18n.js"></script>
-    <script src="assets/js/game.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="../../shared/settings.js"></script>
+    <script
+      src="../../shared/boot.js"
+      data-scripts="assets/js/game.js,assets/js/main.js"
+    ></script>
   </body>
 </html>

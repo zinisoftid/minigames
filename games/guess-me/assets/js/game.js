@@ -1,21 +1,18 @@
 const audioAssetsPath = "assets/music/";
-const productsAssetsPath = "assets/img/products/";
-const characterAssetsPath = "assets/img/characters/";
 
 class Minigame {
   constructor() {
     this.requiredNumberProducts = 0;
     // Product score
-    this.productScore = parseInt(getCookie("productScore"), 10) || 1;
+    this.productScore = GAME_SETTINGS.get("productScore");
     // Max products required to click
-    this.maxRequiredProducts =
-      parseInt(getCookie("maxRequiredProducts"), 10) || 5;
+    this.maxRequiredProducts = GAME_SETTINGS.get("maxRequiredProducts");
     this.initTimeRemainder = 100;
     this.playTimes = 0;
     // PLay times to level-up
-    this.maxPlayTimes = parseInt(getCookie("levelTime"), 10) / 10 || 3;
+    this.maxPlayTimes = GAME_SETTINGS.get("levelTime") / 10;
     // Difficulty level
-    this.difficultyLevel = 10;
+    this.difficultyLevel = GAME_SETTINGS.get("difficultyLevel");
     this.gameScore = {
       finalScore: 0,
       currentScore: 0,
@@ -23,10 +20,8 @@ class Minigame {
     this.gameTime = {
       timerInterval: null,
       timeRemainder: this.initTimeRemainder,
-      countDownTime: getCookie("countDownTime") || 3,
-      timeStep:
-        this.initTimeRemainder / parseInt(getCookie("gameTime"), 10) ||
-        this.initTimeRemainder / 10,
+      countDownTime: GAME_SETTINGS.get("countDownTime"),
+      timeStep: this.initTimeRemainder / GAME_SETTINGS.get("gameTime"),
     };
     this.gameSound = {
       audioBackground: audioAssetsPath + "bg_sound.wav",
@@ -35,46 +30,9 @@ class Minigame {
       // Audio ratio (speed up when level-up)
       audioRatio: 1,
     };
-    this.listProducts = getCookie("arrProducts") !== '' ? JSON.parse(getCookie("arrProducts")) : [
-      {
-        url: productsAssetsPath + "product-1.bf2fbdc6.svg",
-        title: "Burberry",
-        score: this.productScore,
-      },
-      {
-        url: productsAssetsPath + "product-2.40aeec66.svg",
-        title: "Lancome",
-        score: this.productScore,
-      },
-      {
-        url: productsAssetsPath + "product-3.5b794844.svg",
-        title: "Bobbi brown",
-        score: this.productScore,
-      },
-      {
-        url: productsAssetsPath + "product-4.d81a34a7.svg",
-        title: "Shiseido",
-        score: this.productScore,
-      },
-    ];
-    this.listCharacters = getCookie("arrCharacters") !== '' ? JSON.parse(getCookie("arrCharacters")) : [
-      {
-        url: characterAssetsPath + "character-1-normal.7f3e9793.svg",
-        activeUrl: characterAssetsPath + "character-1-active.8d1d9f2a.svg",
-      },
-      {
-        url: characterAssetsPath + "character-2-normal.8a67d7ee.svg",
-        activeUrl: characterAssetsPath + "character-2-active.ed61dfa6.svg",
-      },
-      {
-        url: characterAssetsPath + "character-3-normal.3fb1a4d6.svg",
-        activeUrl: characterAssetsPath + "character-3-active.1f222b79.svg",
-      },
-      {
-        url: characterAssetsPath + "character-4-normal.3ab5544a.svg",
-        activeUrl: characterAssetsPath + "character-4-active.f36fa8b6.svg",
-      },
-    ];
+    // Defaults live in config.json; the player's own list replaces them once saved.
+    this.listProducts = GAME_SETTINGS.get("products");
+    this.listCharacters = GAME_SETTINGS.get("characters");
     this.listProductNames = this.listProducts.map((product) =>
       product.title?.toLowerCase()
     );

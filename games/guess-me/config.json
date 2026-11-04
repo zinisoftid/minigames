@@ -1,0 +1,39 @@
+{
+  "id": "guess-me",
+  "settings": {
+    "countDownTime": 3,
+    "gameTime": 10,
+    "levelTime": 30,
+    "difficultyLevel": 10,
+    "productScore": 1,
+    "maxRequiredProducts": 5
+  },
+  "limits": {
+    "maxProducts": 4,
+    "maxCharacters": 4
+  },
+  "products": [
+    { "url": "assets/img/products/product-1.bf2fbdc6.svg", "title": "Burberry", "score": 1 },
+    { "url": "assets/img/products/product-2.40aeec66.svg", "title": "Lancome", "score": 1 },
+    { "url": "assets/img/products/product-3.5b794844.svg", "title": "Bobbi brown", "score": 1 },
+    { "url": "assets/img/products/product-4.d81a34a7.svg", "title": "Shiseido", "score": 1 }
+  ],
+  "characters": [
+    {
+      "url": "assets/img/characters/character-1-normal.7f3e9793.svg",
+      "activeUrl": "assets/img/characters/character-1-active.8d1d9f2a.svg"
+    },
+    {
+      "url": "assets/img/characters/character-2-normal.8a67d7ee.svg",
+      "activeUrl": "assets/img/characters/character-2-active.ed61dfa6.svg"
+    },
+    {
+      "url": "assets/img/characters/character-3-normal.3fb1a4d6.svg",
+      "activeUrl": "assets/img/characters/character-3-active.1f222b79.svg"
+    },
+    {
+      "url": "assets/img/characters/character-4-normal.3ab5544a.svg",
+      "activeUrl": "assets/img/characters/character-4-active.f36fa8b6.svg"
+    }
+  ]
+}
