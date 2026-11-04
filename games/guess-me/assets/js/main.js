@@ -465,7 +465,8 @@ GUESSME.createSettingPage = () => {
 
     const settingItem1 = $("<div>").addClass("setting-item setting-item-1");
     const imageLabel = $("<label>")
-      .text("Hình ảnh")
+      .text("Image")
+      .attr("data-i18n", "imageLabel")
       .addClass("imageLabel-settingPage");
 
     const imageInputWrapper = $("<div>").addClass("setting-item-input");
@@ -494,7 +495,8 @@ GUESSME.createSettingPage = () => {
 
     const settingItem2 = $("<div>").addClass("setting-item setting-item-2");
     const productNameLabel = $("<label>")
-      .text("Tên sản phẩm")
+      .text("Product name")
+      .attr("data-i18n", "productNameLabel")
       .addClass("productName-settingPage");
 
     const productNameInputWrapper = $("<div>").addClass(
@@ -566,7 +568,8 @@ GUESSME.createSettingPage = () => {
       "setting-item setting-item-character"
     );
     const label = $("<label>")
-      .text("Hình ảnh")
+      .text("Image")
+      .attr("data-i18n", "imageLabel")
       .addClass("imageLabel-settingPage");
     const settingItemInputWrapper = $("<div>")
       .addClass("setting-item-input-wrapper")
@@ -836,7 +839,8 @@ GUESSME.addCharacter = () => {
       "setting-item setting-item-character"
     );
     const label = $("<label>")
-      .text("Hình ảnh")
+      .text("Image")
+      .attr("data-i18n", "imageLabel")
       .addClass("imageLabel-settingPage");
     const settingItemInputWrapper = $("<div>")
       .addClass("setting-item-input-wrapper")
@@ -878,7 +882,7 @@ GUESSME.addCharacter = () => {
     GUESSME.inputFileHandler();
     GUESSME.deleteCharacter();
     GUESSME.previewCharacter();
-    GUESSME.translation();
+    GUESSME.applyLanguage();
   });
 };
 
@@ -933,7 +937,8 @@ GUESSME.addProduct = () => {
 
     const settingItem1 = $("<div>").addClass("setting-item setting-item-1");
     const imageLabel = $("<label>")
-      .text("Hình ảnh")
+      .text("Image")
+      .attr("data-i18n", "imageLabel")
       .addClass("imageLabel-settingPage");
 
     const imageInputWrapper = $("<div>").addClass("setting-item-input");
@@ -961,7 +966,8 @@ GUESSME.addProduct = () => {
 
     const settingItem2 = $("<div>").addClass("setting-item setting-item-2");
     const productNameLabel = $("<label>")
-      .text("Tên sản phẩm")
+      .text("Product name")
+      .attr("data-i18n", "productNameLabel")
       .addClass("productName-settingPage");
 
     const productNameInputWrapper = $("<div>").addClass(
@@ -997,7 +1003,7 @@ GUESSME.addProduct = () => {
     GUESSME.inputFileHandler();
     GUESSME.deleteProduct();
     GUESSME.previewProduct();
-    GUESSME.translation();
+    GUESSME.applyLanguage();
   });
 };
 
@@ -1084,151 +1090,68 @@ GUESSME.previewCharacter = () => {
 // Validation forms
 GUESSME.validateForms = () => {
   $("#settingForm").validate();
-  
+
   const fields = [
-    {
-      name: "countdowninput",
-      label: "Thời gian đếm ngược (s)",
-      min: 0,
-    },
-    {
-      name: "gametimeinput",
-      label: "Thời gian màn chơi (s)",
-      min: 0,
-    },
-    {
-      name: "productscoreinput",
-      label: "Bước điểm",
-      min: 0,
-    },
-    {
-      name: "maxproductinput",
-      label: "Số lượng sản phẩm tối đa",
-      min: 0,
-    },
-    {
-      name: "leveltimeinput",
-      label: "Thời gian level (s)",
-      min: 0,
-    },
-    {
-      name: "difficultylevelinput",
-      label: "Độ khó (%)",
-      min: 0,
-    },
+    { name: "countdowninput", labelKey: "countDownLabel", min: 0 },
+    { name: "gametimeinput", labelKey: "gameTimeLabel", min: 0 },
+    { name: "productscoreinput", labelKey: "productScoreLabel", min: 0 },
+    { name: "maxproductinput", labelKey: "maxProductLabel", min: 0 },
+    { name: "leveltimeinput", labelKey: "levelTimeLabel", min: 0 },
+    { name: "difficultylevelinput", labelKey: "difficultyLabel", min: 0 },
   ];
-  
+
+  // Messages are functions so they use the language chosen at the time of the error.
   fields.forEach((field) => {
-    const fieldName = field.name;
-    const fieldLabel = field.label;
-    
+    const label = () => $.i18n(field.labelKey);
+
     $("#settingForm")
-    .find(`[name="${fieldName}"]`)
-    .rules("add", {
-      required: true,
-      digits: true,
-      min: field.min,
-      messages: {
-        required: `Vui lòng nhập giá trị ${fieldLabel}`,
-        digits: `${fieldLabel} phải là chữ số`,
-        min: `${fieldLabel} phải lớn hơn hoặc bằng 0`,
+      .find(`[name="${field.name}"]`)
+      .rules("add", {
+        required: true,
+        digits: true,
+        min: field.min,
+        messages: {
+          required: () => $.i18n("valueRequired", label()),
+          digits: () => $.i18n("mustBeDigits", label()),
+          min: () => $.i18n("mustBeMin", label(), field.min),
         },
       });
   });
 };
 
-// Translation using i18n
+// Text of the page in the chosen language. Markup carries English text and a
+// data-i18n / data-i18n-placeholder / data-i18n-title key; see shared/i18n.js.
+GUESSME.applyLanguage = () => {
+  $.i18n().locale = MiniLang.get();
+  MiniLang.apply(document, (key) => {
+    const text = $.i18n(key);
+    return text === key || text.indexOf("⧼") === 0 ? "" : text;
+  });
+  alertify.defaults.glossary = {
+    title: $.i18n("alertTitle"),
+    ok: $.i18n("ok"),
+    cancel: $.i18n("cancel"),
+  };
+};
+
+// Language files and the language selector
 GUESSME.translation = () => {
   const languageSelect = $("#language-select");
+  const files = {};
 
-  var defaultLanguage = getCookie("defaultLanguage") || "en";
+  Object.keys(MiniLang.LANGUAGES).forEach((code) => {
+    files[code] = `assets/lang/${code}.json`;
+    languageSelect.append(
+      $("<option>").val(code).text(MiniLang.LANGUAGES[code])
+    );
+  });
+  languageSelect.val(MiniLang.get());
 
-  languageSelect.val(defaultLanguage);
+  $.i18n().load(files).done(GUESSME.applyLanguage);
 
-  function updateTranslation(language) {
-    $.i18n().locale = language;
-
-    // Update translated text
-    // Setting page
-    $("#setting-main-title").text($.i18n("setting"));
-    $("#product-setting").text($.i18n("productSetting"));
-    $("#character-setting").text($.i18n("characterSetting"));
-    $("#general-setting").text($.i18n("generalSetting"));
-    $(".imageLabel-settingPage").text($.i18n("imageLabel-settingPage"));
-    $(".productName-settingPage").text($.i18n("productName-settingPage"));
-    $("#count-down-input")
-      .parent()
-      .next()
-      .text($.i18n("countDownLabel") + " (s)");
-    $("#game-time-input")
-      .parent()
-      .next()
-      .text($.i18n("gameTimeLabel") + " (s)");
-    $("#product-score-input").parent().next().text($.i18n("productScoreLabel"));
-    $("#max-product-input").parent().next().text($.i18n("maxProductLabel"));
-    $("#level-time-input")
-      .parent()
-      .next()
-      .text($.i18n("levelTimeLabel") + " (s)");
-    $("#difficulty-level-input")
-      .parent()
-      .next()
-      .text($.i18n("difficultyLevelLabel") + " (%)");
-    languageSelect.parent().next().text($.i18n("displayLanguageLabel"));
-
-    // Rank page
-    $("#rank").text($.i18n("rank"));
-    $("#stt-col").text($.i18n("###"));
-    $("#name-col").text($.i18n("Full name"));
-    $("#email-col").text($.i18n("E-mail"));
-    $("#phone-col").text($.i18n("Phone"));
-    $("#score-col").text($.i18n("Score"));
-
-    // Prize page
-    $("#prize").text($.i18n("prize"));
-
-    // Rules page
-    $("#rules").text($.i18n("rules"));
-
-    // Play page
-    $(".count-down-text").prev().text($.i18n("Game start after"));
-
-    // Home page
-    $("#play-game").text($.i18n("Play Game"));
-    $(".primary-button").find("a[href='#play-page']").text($.i18n("Start Game"));
-    $("#your-own-score").text($.i18n("Your Score"));
-    $(".cancel-game-text").text($.i18n("Cancel"));
-    $(".restart-game-text").text($.i18n("Restart Game"));
-    $(".register-toggle-label").find("a").text($.i18n("register"));
-    $(".register-header").find("h2").text($.i18n("register"));
-    $(".back-button").text($.i18n("back"));
-    $("#send-score").text($.i18n("sendScore"));
-
-    $(".hub-back-text").text($.i18n("backToHub"));
-
-    // Header navbar
-    // $(".nav-item").find("a[href='#play-page']").text($.i18n("Play Game"));
-    // $(".nav-item").find("a[href='#rules-page']").text($.i18n("rules"));
-    // $(".nav-item").find("a[href='#prize-page']").text($.i18n("prize"));
-    // $(".nav-item").find("a[href='#rank-page']").text($.i18n("rank"));
-    // $(".nav-item").find("a[href='#setting-page']").text($.i18n("setting"));
-  }
-
-  $.i18n()
-    .load({
-      en: "assets/lang/en.json",
-      vi: "assets/lang/vi.json",
-    })
-    .done(function () {
-      // Default language
-      updateTranslation(getCookie("defaultLanguage") || "en");
-    });
-
-  // Language selection change event
   languageSelect.on("change", function () {
-    const selectedLanguage = $(this).val();
-    updateTranslation(selectedLanguage);
-    setCookie("defaultLanguage", selectedLanguage, 365);
+    MiniLang.set($(this).val());
+    GUESSME.applyLanguage();
   });
 };
 

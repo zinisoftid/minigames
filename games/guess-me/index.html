@@ -81,7 +81,7 @@
   </head>
 
   <body>
-    <a class="hub-back" href="../../">&larr; <span class="hub-back-text">All games</span></a>
+    <a class="hub-back" href="../../">&larr; <span class="hub-back-text" data-i18n="backToHub">All games</span></a>
     <div class="wrapper">
       <!-- ------------------------------------------- Header ------------------------------------------- -->
       <header class="header-site">
@@ -104,19 +104,19 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#play-page">Play game</a>
+                <a class="nav-link" href="#play-page" data-i18n="navPlay">Play game</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#rules-page">Rules</a>
+                <a class="nav-link" href="#rules-page" data-i18n="navRules">Rules</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#prize-page">Prizes</a>
+                <a class="nav-link" href="#prize-page" data-i18n="navPrizes">Prizes</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#rank-page">Ranking</a>
+                <a class="nav-link" href="#rank-page" data-i18n="navRanking">Ranking</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#setting-page">Settings</a>
+                <a class="nav-link" href="#setting-page" data-i18n="navSettings">Settings</a>
               </li>
             </ul>
             <div class="mobile-menu-icon"></div>
@@ -129,7 +129,7 @@
         <!-- ------------------------------------------- Homepage ------------------------------------------- -->
         <div class="home-page" id="home-page">
           <div class="main-top-site">
-            <h1 id="play-game">Chơi game</h1>
+            <h1 id="play-game" data-i18n="playTitle">Play game</h1>
           </div>
           <div class="main-bottom-site">
             <div class="container main-bottom-content">
@@ -150,25 +150,19 @@
                   <ul class="home-page-list">
                     <li>
                       <span>01.</span>
-                      <p>Choose the right product and product quantity</p>
+                      <p data-i18n="homeStep1">Choose the right product and product quantity</p>
                     </li>
                     <li>
                       <span>02.</span>
-                      <p>
-                        Each player has time to choose a product, choose the
-                        fastest product to score points
-                      </p>
+                      <p data-i18n="homeStep2">Each player has time to choose a product, choose the fastest product to score points</p>
                     </li>
                     <li>
                       <span>03.</span>
-                      <p>
-                        The more products you choose correctly, the more points
-                        you score and the chance to win prizes
-                      </p>
+                      <p data-i18n="homeStep3">The more products you choose correctly, the more points you score and the chance to win prizes</p>
                     </li>
                   </ul>
                   <button class="primary-button">
-                    <a href="#play-page">Bắt đầu chơi</a>
+                    <a href="#play-page" data-i18n="startPlaying">Start playing</a>
                   </button>
                 </div>
               </div>
@@ -188,25 +182,20 @@
                   alt=""
                 />
                 <button class="restart-game-button-close"></button>
-                <h2 id="your-own-score">Điểm thưởng bạn đạt được</h2>
+                <h2 id="your-own-score" data-i18n="yourScore">Your score</h2>
               </div>
               <h1 class="final-score-text">0</h1>
               <div class="choices-group">
-                <button class="primary-button cancel-game-text">Thoát</button>
-                <button class="primary-button restart-game-text">
-                  Chơi lại
-                </button>
+                <button class="primary-button cancel-game-text" data-i18n="quit">Quit</button>
+                <button class="primary-button restart-game-text" data-i18n="playAgain">Play again</button>
               </div>
-              <!-- <div class="register-toggle-label">
-                <a>Đăng ký</a>
-              </div> -->
             </div>
           </div>
           <div class="main-bottom-site" id="play-page-main-bottom-site">
             <div class="container main-bottom-content" id="play-page-content">
               <div class="row main-bottom-content-row">
                 <div class="modal-count-down">
-                  <span>Game start after</span>
+                  <span data-i18n="gameStartsIn">Game starts in</span>
                   <h1 class="count-down-text"></h1>
                 </div>
                 <div class="game-content">
@@ -215,7 +204,7 @@
                       <div class="timer-site">
                         <div class="timer-range"></div>
                         <div class="level-site">
-                          Level: <span id="level">1</span>
+                          <span data-i18n="level">Level:</span> <span id="level">1</span>
                         </div>
                       </div>
                     </div>
@@ -252,7 +241,7 @@
         <!-- ------------------------------------------- Rulespage ------------------------------------------- -->
         <div class="rules-page" id="rules-page">
           <div class="main-top-site">
-            <h1 id="rules">Rules</h1>
+            <h1 id="rules" data-i18n="rulesTitle">Rules</h1>
           </div>
           <div class="main-bottom-site">
             <div class="container main-bottom-content">
@@ -324,7 +313,7 @@
         <!-- ------------------------------------------- Prizepage ------------------------------------------- -->
         <div class="prize-page" id="prize-page">
           <div class="main-top-site">
-            <h1 id="prize">Prizes</h1>
+            <h1 id="prize" data-i18n="prizesTitle">Prizes</h1>
           </div>
           <div class="main-bottom-site">
             <div class="container main-bottom-content" style="padding: 40px">
@@ -344,9 +333,9 @@
                       />
                       <div class="prize-card-desc">
                         <span>1</span>
-                        <span>First prize</span>
+                        <span data-i18n="prizeFirst">First prize</span>
                       </div>
-                      <span class="prize-card-name">Retro TV</span>
+                      <span class="prize-card-name" data-i18n="prizeName1">Retro TV</span>
                     </div>
                   </div>
                   <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-xs-12">
@@ -357,9 +346,9 @@
                       />
                       <div class="prize-card-desc">
                         <span>3</span>
-                        <span>Second prize</span>
+                        <span data-i18n="prizeSecond">Second prize</span>
                       </div>
-                      <span class="prize-card-name">Camera</span>
+                      <span class="prize-card-name" data-i18n="prizeName2">Camera</span>
                     </div>
                   </div>
                   <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-xs-12">
@@ -370,19 +359,17 @@
                       />
                       <div class="prize-card-desc">
                         <span>5</span>
-                        <span>Third Prize</span>
+                        <span data-i18n="prizeThird">Third Prize</span>
                       </div>
-                      <span class="prize-card-name">Voucher Gift</span>
+                      <span class="prize-card-name" data-i18n="prizeName3">Voucher Gift</span>
                     </div>
                   </div>
                 </div>
-                Conversion rate and principles of redemption and use of bonus
-                points:
+                <span data-i18n="prizeConversionTitle">Conversion rate and principles of redemption and use of bonus points:</span>
                 <br />
-                - 1 point = 1$ <br />
-                - The conversion will be calculated according to the purchase
-                invoice and according to the principle of rounding down. <br />
-                - Guest bonus points will be accumulated after each game play.
+                - <span data-i18n="prizeRule1">1 point = 1$</span> <br />
+                - <span data-i18n="prizeRule2">The conversion will be calculated according to the purchase invoice and according to the principle of rounding down.</span> <br />
+                - <span data-i18n="prizeRule3">Guest bonus points will be accumulated after each game play.</span>
               </div>
             </div>
           </div>
@@ -391,7 +378,7 @@
         <!-- ------------------------------------------- Rankpage ------------------------------------------- -->
         <div class="rank-page" id="rank-page">
           <div class="main-top-site">
-            <h1 id="rank">Ranking</h1>
+            <h1 id="rank" data-i18n="rankTitle">Ranking</h1>
           </div>
           <div class="main-bottom-site">
             <div class="container main-bottom-content">
@@ -399,11 +386,11 @@
                 <div class="table-wrapper">
                   <table class="rank-site-content">
                     <tr>
-                      <th class="fixed-column" id="stt-col">STT</th>
-                      <th id="name-col">Fullname</th>
-                      <th id="email-col">Email</th>
-                      <th id="phone-col">Phone</th>
-                      <th id="score-col">Score</th>
+                      \1 data-i18n="colRank">No</th>
+                      \1 data-i18n="colName">Full name</th>
+                      \1 data-i18n="colEmail">Email</th>
+                      \1 data-i18n="colPhone">Phone</th>
+                      \1 data-i18n="colScore">Score</th>
                     </tr>
                     <tr>
                       <td class="fixed-column">
@@ -501,25 +488,21 @@
         <div class="setting-page" id="setting-page">
           <div class="main-top-site">
             <h1 class="difficultyLevelLabel"></h1>
-            <h1 id="setting-main-title">Settings</h1>
+            <h1 id="setting-main-title" data-i18n="settingsTitle">Settings</h1>
           </div>
           <div class="main-bottom-site">
             <div class="container main-bottom-content">
               <div class="setting-page-container">
                 <div class="setting-container">
                   <div class="setting-content">
-                    <div class="setting-title" id="product-setting">
-                      Products
-                    </div>
+                    \1 data-i18n="productsTitle">Products</div>
                     <div
                       class="setting-item-wrapper"
                       id="setting-item-wrapper-1"
                     ></div>
                   </div>
                   <div class="setting-content" style="padding-left: 16px">
-                    <div class="setting-title" id="character-setting">
-                      Characters
-                    </div>
+                    \1 data-i18n="charactersTitle">Characters</div>
                     <div
                       class="setting-item-wrapper"
                       id="setting-item-wrapper-2"
@@ -528,9 +511,7 @@
                 </div>
                 <div class="setting-container">
                   <div class="setting-content general-setting">
-                    <div class="setting-title" id="general-setting">
-                      Generals
-                    </div>
+                    \1 data-i18n="generalTitle">General</div>
                     <form
                       class="setting-item-wrapper general-setting-wrapper"
                       id="settingForm"
@@ -551,6 +532,8 @@
                             data-toggle="tooltip"
                             data-placement="bottom"
                             title="Count down before start game"
+                            data-i18n-title="countDownTip"
+                            data-i18n="countDownLabel"
                             >Count down (s)</label
                           >
                         </div>
@@ -571,6 +554,8 @@
                             data-toggle="tooltip"
                             data-placement="bottom"
                             title="Max time of a round"
+                            data-i18n-title="gameTimeTip"
+                            data-i18n="gameTimeLabel"
                             >Time of round (s)</label
                           >
                         </div>
@@ -591,6 +576,8 @@
                             data-toggle="tooltip"
                             data-placement="bottom"
                             title="Score when use select right product"
+                            data-i18n-title="productScoreTip"
+                            data-i18n="productScoreLabel"
                             >Score step</label
                           >
                         </div>
@@ -611,6 +598,8 @@
                             data-toggle="tooltip"
                             data-placement="bottom"
                             title="Max product"
+                            data-i18n-title="maxProductTip"
+                            data-i18n="maxProductLabel"
                             >Max product</label
                           >
                         </div>
@@ -631,6 +620,8 @@
                             data-toggle="tooltip"
                             data-placement="bottom"
                             title="Time for up level when user finish a round"
+                            data-i18n-title="levelTimeTip"
+                            data-i18n="levelTimeLabel"
                             >Time for up level (s)</label
                           >
                         </div>
@@ -651,28 +642,23 @@
                             data-toggle="tooltip"
                             data-placement="bottom"
                             title="Hard level when go to up level"
+                            data-i18n-title="difficultyTip"
+                            data-i18n="difficultyLabel"
                             >Hard level (%)</label
                           >
                         </div>
                       </div>
-                      <!-- <div class="setting-item-content general-setting-item">
+                      <div class="setting-item-content general-setting-item">
                         <div class="setting-item" style="width: 100%">
                           <div class="image-input-content">
-                            <select id="language-select" class="custom-select">
-                              <option value="vi">Vietnamese</option>
-                              <option value="en">English</option>
-                            </select>
+                            <select id="language-select" class="custom-select"></select>
                           </div>
-                          <label for="">Ngôn ngữ hiển thị</label>
+                          <label for="language-select" data-i18n="languageLabel">Language</label>
                         </div>
-                      </div> -->
+                      </div>
                       <button
                         class="primary-button"
-                        id="save-setting-button"
-                        style="margin-top: 24px"
-                      >
-                        Save
-                      </button>
+                        \1data-i18n="save"\n                      >Save</button>
                     </form>
                   </div>
                 </div>
@@ -686,7 +672,7 @@
       <section class="modal-register">
         <div class="register-wrapper">
           <div class="register-header">
-            <h2>Đăng Ký</h2>
+            <h2 data-i18n="registerTitle">Register</h2>
             <button class="register-button-close"></button>
           </div>
           <form class="register-body" id="registerForm">
@@ -694,7 +680,8 @@
               <input
                 name="fullName"
                 type="text"
-                placeholder="Họ và tên"
+                placeholder="Full name"
+                data-i18n-placeholder="fullName"
                 required
               />
             </div>
@@ -702,18 +689,25 @@
               <input
                 name="phoneNumber"
                 type="text"
-                placeholder="Số điện thoại"
+                placeholder="Phone number"
+                data-i18n-placeholder="phoneNumber"
                 required
               />
             </div>
             <div class="input-text">
-              <input name="email" type="text" placeholder="Email" required />
+              <input
+                name="email"
+                type="text"
+                placeholder="Email"
+                data-i18n-placeholder="email"
+                required
+              />
             </div>
             <div class="rules-checkbox">
               <span class="checkbox-icon"></span>
               <span class="checkbox-accept-rules">
-                I read and agree with&nbsp;
-                <a href="#rules-page">Rules</a>
+                <span data-i18n="agreeWith">I read and agree with</span>&nbsp;
+                <a href="#rules-page" data-i18n="rulesLink">Rules</a>
               </span>
             </div>
             <!-- <div class="register-footer">
@@ -777,6 +771,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script src="../../shared/i18n.js"></script>
     <script src="assets/js/game.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
