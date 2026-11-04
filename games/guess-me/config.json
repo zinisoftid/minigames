@@ -13,10 +13,10 @@
     "maxCharacters": 4
   },
   "products": [
-    { "url": "assets/img/products/product-1.bf2fbdc6.svg", "title": "Burberry", "score": 1 },
-    { "url": "assets/img/products/product-2.40aeec66.svg", "title": "Lancome", "score": 1 },
-    { "url": "assets/img/products/product-3.5b794844.svg", "title": "Bobbi brown", "score": 1 },
-    { "url": "assets/img/products/product-4.d81a34a7.svg", "title": "Shiseido", "score": 1 }
+    { "url": "assets/img/products/product-1.bf2fbdc6.svg", "title": "Cold Brew", "score": 1 },
+    { "url": "assets/img/products/product-2.40aeec66.svg", "title": "Daily Tote", "score": 1 },
+    { "url": "assets/img/products/product-3.5b794844.svg", "title": "Berry Fizz", "score": 1 },
+    { "url": "assets/img/products/product-4.d81a34a7.svg", "title": "Surprise Box", "score": 1 }
   ],
   "characters": [
     {

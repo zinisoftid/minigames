@@ -131,7 +131,7 @@ SPIN_WHEEL.showPopupPrice = function (part) {
   } else if (part.gift) {
     $("#price-gift").addClass("active");
     $("#content-gift-title").text(SPIN_WHEEL.t(part.title));
-    $("#content-gift-name").text(SPIN_WHEEL.t("giftBox", part.gift));
+    $("#content-gift-name").text(SPIN_WHEEL.t("giftDrink", part.gift));
   } else if (part.message) {
     $("#price-message").addClass("active");
     $("#content-message-title").text(SPIN_WHEEL.t(part.title));

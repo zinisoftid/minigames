@@ -1,10 +1,10 @@
 # MiniGame
 
-Two small HTML5 marketing mini-games you can open in a browser or host as static files. No build step and no backend.
+Two small HTML5 mini-games for food, drink and online-store campaigns, themed around the fictional Corner Café brand. Open them in a browser or host them as static files. No build step and no backend.
 
 | Game | What it is | Folder |
 |---|---|---|
-| Guess Me | Match the product the character asks for before time runs out. English and Vietnamese. | [games/guess-me](games/guess-me) |
+| Guess Me | Spot the new product the character asks for before time runs out. English and Vietnamese. | [games/guess-me](games/guess-me) |
 | Lucky Spin | Spin the wheel to win prizes, with a rank table. | [games/spin-wheel](games/spin-wheel) |
 
 ## Run locally

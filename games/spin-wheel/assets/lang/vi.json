@@ -39,12 +39,12 @@
   "prize1": "Giải nhất",
   "prize2": "Giải nhì",
   "prize3": "Giải ba",
-  "prizeTv": "TV cổ điển",
-  "prizeCamera": "Máy ảnh",
-  "prizeVoucher": "Phiếu quà tặng",
+  "prizeFirst": "Bộ quà cà phê",
+  "prizeSecond": "Thẻ miễn phí giao hàng",
+  "prizeThird": "Phiếu đồ uống",
   "popupMoreSpins": "Bạn được thêm $1 lượt quay",
   "popupWish": "Bạn nhận được một lời chúc",
   "popupGift": "Bạn nhận được quà",
   "popupPoints": "Bạn đạt được điểm thưởng",
-  "giftBox": "$1 hộp quà"
+  "giftDrink": "Đồ uống miễn phí x$1"
 }
