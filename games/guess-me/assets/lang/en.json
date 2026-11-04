@@ -55,5 +55,6 @@
   "confirmDeleteCharacter":"Are you sure to delete this character?",
 
   "requiredFields": "Please enter full information!",
-  "invalidPhoneNumber": "Phone number is invalid!" 
+  "invalidPhoneNumber": "Phone number is invalid!",
+  "backToHub": "All games"
 }

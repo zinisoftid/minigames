@@ -50,5 +50,6 @@
   "confirmDeleteCharacter":"Bạn có chắc muốn xoá nhân vật này?",
 
   "requiredFields": "Vui lòng nhập đầy đủ thông tin!",
-  "validPhoneNumber": "Số điện thoại không hợp lệ!"
+  "validPhoneNumber": "Số điện thoại không hợp lệ!",
+  "backToHub": "Tất cả game"
 }

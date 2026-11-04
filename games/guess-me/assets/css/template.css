@@ -1228,3 +1228,21 @@ label.error {
 input.error {
   border: solid 1px #ff0000;
 }
+
+/* Link back to the games hub */
+.hub-back {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 1000;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(38, 50, 74, 0.8);
+  color: #fff;
+  font: 700 13px/1.6 "Quicksand", Arial, sans-serif;
+  text-decoration: none;
+}
+.hub-back:hover {
+  background: #26324a;
+  color: #ffc93c;
+}

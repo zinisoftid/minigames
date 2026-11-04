@@ -1141,7 +1141,7 @@ GUESSME.validateForms = () => {
 GUESSME.translation = () => {
   const languageSelect = $("#language-select");
 
-  var defaultLanguage = getCookie("defaultLanguage") || "vi";
+  var defaultLanguage = getCookie("defaultLanguage") || "en";
 
   languageSelect.val(defaultLanguage);
 
@@ -1204,6 +1204,8 @@ GUESSME.translation = () => {
     $(".back-button").text($.i18n("back"));
     $("#send-score").text($.i18n("sendScore"));
 
+    $(".hub-back-text").text($.i18n("backToHub"));
+
     // Header navbar
     // $(".nav-item").find("a[href='#play-page']").text($.i18n("Play Game"));
     // $(".nav-item").find("a[href='#rules-page']").text($.i18n("rules"));
@@ -1219,7 +1221,7 @@ GUESSME.translation = () => {
     })
     .done(function () {
       // Default language
-      updateTranslation(getCookie("defaultLanguage") || "vi");
+      updateTranslation(getCookie("defaultLanguage") || "en");
     });
 
   // Language selection change event

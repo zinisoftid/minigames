@@ -15,13 +15,13 @@ Any static server works. From this folder:
 python -m http.server 8000
 ```
 
-Then open `http://localhost:8000/games/guess-me/` or `http://localhost:8000/games/spin-wheel/`.
+Then open `http://localhost:8000/` for the hub page, which links to each game, or go straight to `http://localhost:8000/games/guess-me/` or `http://localhost:8000/games/spin-wheel/`.
 
 Opening `index.html` directly from disk may fail for the language files (`fetch` is blocked on `file://`), so use a server.
 
 ## Publish
 
-Both games are plain static folders. Upload either folder to GitHub Pages, Netlify or any web host. The pages load jQuery, Bootstrap and Google Fonts from public CDNs, so visitors need internet access.
+Publish the whole folder so the hub page and the "All games" links work (or upload a single game folder on its own). Upload to GitHub Pages, Netlify or any web host. The pages load jQuery, Bootstrap and Google Fonts from public CDNs, so visitors need internet access.
 
 ## Data and privacy
 
@@ -29,7 +29,8 @@ The registration form asks for name, email and phone number. Everything is kept 
 
 ## Customize
 
-- Text and language: `games/guess-me/assets/lang/en.json` and `vi.json`.
+- Hub page: `index.html` at the root; its text lives in `assets/lang/*.json`. To add a language, copy `en.json` to `assets/lang/<code>.json` and add one line to `LANGUAGES` in `assets/hub.js`. The default is English. The choice is stored in the `defaultLanguage` cookie, shared with Guess Me.
+- Text and language of Guess Me: `games/guess-me/assets/lang/en.json` and `vi.json`.
 - Products and characters: images in `games/guess-me/assets/img/` and the lists at the top of `assets/js/game.js`.
 - Prizes and wheel: `games/spin-wheel/assets/js/main.js`.
 
