@@ -1,0 +1,1230 @@
+/* ------------------------------------------- General ------------------------------------------- */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*:hover,
+*:not(:hover) {
+  transition: all ease-in-out 0.3s;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+  background: url("../img/general/bg-body.839ede93.jpg") top;
+  background-size: cover;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Pacifico", sans-serif;
+  color: #ef1c24;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 48px;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* ------------------------------------------- Header ------------------------------------------- */
+.header-site {
+  height: 10vh;
+  background-color: transparent;
+}
+
+#header-navbar {
+  font-family: "Pacifico", sans-serif;
+  font-size: 24px;
+}
+
+#header-navbar .nav-item:first-child {
+  display: none;
+}
+
+.header-item-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.brand-header-logo {
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-header-logo img {
+  width: 100%;
+}
+
+.brand-header-logo-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+}
+
+.brand-header-logo-mobile img {
+  width: 100%;
+}
+
+.nav-link {
+  color: #222;
+}
+
+.nav-link:hover {
+  color: #ef1c24;
+}
+
+.header-item-active {
+  color: #ef1c24;
+}
+
+/* ------------------------------------------- General Pages ------------------------------------------- */
+.play-page,
+.rules-page,
+.prize-page,
+.rank-page,
+.setting-page {
+  display: none;
+}
+
+/* ------------------------------------------- Homepage ------------------------------------------- */
+.main-site {
+  height: 90vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-top-site {
+  height: 10vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.main-top-site h1 {
+  font-size: 48px;
+  text-align: center;
+}
+
+.main-bottom-content {
+  background: url("../img/general/bg-page-content.6a3a2509.png") no-repeat top;
+  background-size: cover;
+  width: 100%;
+  border-radius: 30px;
+  height: 68vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -ms-box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+}
+
+.main-bottom-content-row {
+  margin-left: 0;
+  margin-right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.demo-img {
+  width: 100%;
+}
+
+.home-page-list {
+  margin-bottom: 26px;
+  padding: 0;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.home-page-list li {
+  display: flex;
+  margin-bottom: 36px;
+  list-style: none;
+}
+
+.home-page-list li span {
+  font-family: "Pacifico", sans-serif;
+  margin-bottom: 5px;
+  font-size: 32px;
+  color: #222;
+  display: flex;
+  align-items: flex-start;
+}
+
+.home-page-list li p {
+  font-weight: 700;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  margin-left: 16px;
+  color: #222;
+}
+
+.primary-button {
+  background: linear-gradient(180deg, rgb(255, 80, 80) 0%, rgb(211, 0, 0) 100%);
+  box-shadow: 2px -2px 10px 0px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  border-radius: 42px;
+  font-family: "Roboto", sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 10px;
+  border: 12px solid #fff;
+  color: #fff;
+}
+
+.primary-button a {
+  display: block;
+  color: #fff;
+}
+
+.primary-button:hover {
+  background: linear-gradient(0deg, rgb(255, 80, 80) 0%, rgb(211, 0, 0) 100%);
+  color: #fff;
+}
+
+.primary-button a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* ------------------------------------------- Register Modal ------------------------------------------- */
+
+.register-toggle-label {
+  padding-top: 24px;
+  padding-bottom: 40px;
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.register-toggle-label a {
+  color: #222;
+  font-size: 18px;
+}
+
+.register-toggle-label a:hover {
+  color: #ef1c24 !important;
+  text-decoration: none;
+}
+
+.modal-register {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 7;
+  display: none;
+  cursor: pointer;
+}
+
+.register-wrapper {
+  background: url("../../assets/img/register/Rectangle.png") no-repeat;
+  background-size: 100% 100%;
+  border-radius: 30px;
+  max-width: 826px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  width: 90%;
+  padding: 40px;
+}
+
+.register-header {
+  position: relative;
+  margin-bottom: 31px;
+}
+
+.register-header h2 {
+  text-align: center;
+  color: #222;
+  margin-bottom: 0;
+  margin-top: 0;
+  text-transform: capitalize;
+  height: 72px;
+}
+
+.register-button-close {
+  background: url("../img/register/ico-close.48084f2c.png") no-repeat 50%;
+  width: 94px;
+  height: 94px;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  background-size: contain;
+}
+
+.register-button-close:hover {
+  filter: brightness(60%);
+}
+
+.input-text {
+  padding: 10px;
+  border-radius: 36px;
+  background: #9b3200;
+  background: linear-gradient(
+    90deg,
+    rgba(112, 21, 0, 0.93),
+    rgba(237, 133, 0, 0.19)
+  );
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.input-text input {
+  width: 100%;
+  height: 52px;
+  border: 1px solid #924400;
+  border-radius: 26px;
+  font-size: 24px;
+  line-height: 30px;
+  color: #fff;
+  padding: 14px 24px;
+  box-sizing: border-box;
+  background: linear-gradient(90deg, #731700, #c15c00);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: #fff;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+.input-text input::placeholder {
+  color: #b6806b;
+}
+
+.input-text input:focus {
+  outline: none;
+}
+
+.rules-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.register-footer {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.register-footer button {
+  width: 47%;
+  margin-bottom: 15px;
+}
+
+.checkbox-icon {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 70px;
+  height: 70px;
+  background-image: url("../img/register/download-3.png");
+  cursor: pointer;
+}
+
+.checkbox-icon-active {
+  background-image: url("../img/register/download-4.png");
+  cursor: pointer;
+}
+
+.checkbox-accept-rules {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.checkbox-accept-rules a {
+  text-decoration: underline;
+  color: #222;
+}
+
+.checkbox-accept-rules a:hover {
+  color: #ef1c24;
+  transition: none;
+}
+
+.rules-container {
+  height: 100%;
+}
+
+/* ------------------------------------------- Playpage ------------------------------------------- */
+#play-page-main-bottom-site {
+  height: 90vh;
+}
+
+#play-page-content {
+  height: 100%;
+  overflow: hidden;
+}
+
+#play-page-content .main-bottom-content-row {
+  overflow: hidden;
+}
+
+.play-top-site {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+.timer-site {
+  background: url("../img/play-page/game-element.f3940bd8.png") no-repeat;
+  width: 307px;
+  height: 86px;
+  padding: 32px 14px 0 70px;
+}
+
+.timer-range {
+  height: 22px;
+  background: url("../img/play-page/download.png") repeat-x;
+  width: 100%;
+  border-radius: 24px;
+}
+
+.level-site {
+  color: #ef1c24;
+  font-family: "Quicksand", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 16px;
+  padding-top: 8px;
+}
+
+.current-score {
+  height: 64px;
+  width: 203px;
+  background: url("../img/play-page/download-2.png") no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 64px;
+  border-radius: 28px;
+}
+
+.product-card-list {
+  width: 100%;
+  padding-top: 4%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.product-card-img {
+  background-color: #fff;
+  height: 160px;
+  max-width: 160px;
+  text-align: center;
+  position: relative;
+  border-radius: 5px;
+  -ms-box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+  margin: 0 auto 5px;
+}
+
+.product-card-name {
+  font-family: "Quicksand", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+}
+
+.game-content {
+  display: none;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.false-clicked-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 7;
+}
+
+.false-clicked-img {
+  width: 50%;
+}
+
+.number-correct {
+  position: absolute;
+  background: url("../img/play-page/download-5.png") no-repeat;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  top: -24%;
+  left: 56%;
+  z-index: 4;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.number-correct span:first-child {
+  font-family: "Quicksand", sans-serif;
+  color: #ef1c24;
+  font-size: 42px;
+  padding-top: 16px;
+}
+
+.number-correct span:nth-child(2) {
+  font-family: "Pacifico", sans-serif;
+  color: #ef1c24;
+  font-size: 72px;
+  padding-bottom: 12px;
+}
+
+.character-card-list {
+  width: 100%;
+  padding-top: 6%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-top: 8%; */
+}
+
+.character-card {
+  cursor: pointer;
+  height: 140px;
+}
+
+.character-1-card-active,
+.character-2-card-active,
+.character-3-card-active,
+.character-4-card-active {
+  display: none;
+}
+
+.character-list-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.name-correct {
+  position: absolute;
+  top: -36%;
+  right: 0;
+  width: 168px;
+  height: 177px;
+  background: url("../img/play-page/download-6.png") no-repeat;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 30px;
+  z-index: 5;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.name-correct-number,
+.name-correct-desc {
+  font-size: 16px;
+}
+
+.score-site {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.crown-img {
+  margin-right: 18px;
+}
+
+/* ------------------------------------------- Prizepage ------------------------------------------- */
+.prize-page-content {
+  margin: 0;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.prize-page {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.prize-card-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.prize-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.prize-card-desc {
+  font-family: "Pacifico", sans-serif;
+  margin-bottom: 18px;
+}
+
+.prize-card-desc span:first-child {
+  font-size: 70px;
+}
+
+.prize-card-desc span:nth-child(2) {
+  font-size: 28px;
+  margin-left: 8px;
+}
+
+.prize-card-name {
+  font-size: 24px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* ------------------------------------------- Rankpage ------------------------------------------- */
+.rank-page .main-bottom-content {
+  padding: 40px 0;
+}
+
+.table-wrapper {
+  height: 100%;
+  padding: 0 8px 8px 0;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.table-container {
+  max-width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0 40px;
+}
+
+.rank-site-content {
+  width: 100%;
+  height: 100%;
+  table-layout: fixed;
+}
+
+.rank-site-content tr,
+.rank-site-content td,
+.rank-site-content th {
+  border: 1px solid #979797;
+  vertical-align: middle;
+  font-size: 20px;
+  white-space: nowrap;
+  padding: 12px 16px;
+}
+
+.rank-site-content th,
+.rank-site-content td {
+  width: 100px;
+}
+
+.fixed-column {
+  position: sticky;
+  left: 0;
+  background-color: transparent;
+  z-index: 1;
+}
+
+.rank-site-content tr th:first-child,
+.rank-site-content tr td:first-child {
+  text-align: center;
+}
+
+.rank-site-content tr th:nth-child(2),
+.rank-site-content tr td:nth-child(2),
+.rank-site-content tr th:nth-child(3),
+.rank-site-content tr td:nth-child(3) {
+  width: 300px;
+  text-align: left;
+}
+
+.rank-site-content tr th:nth-child(4),
+.rank-site-content tr td:nth-child(4) {
+  width: 200px;
+  text-align: right;
+}
+
+.rank-site-content tr th:nth-child(5),
+.rank-site-content tr td:nth-child(5) {
+  text-align: right;
+}
+
+.active-column {
+  background-color: #ef1c24;
+  color: #fff;
+}
+
+/* ------------------------------------------- Countdown Modal ------------------------------------------- */
+
+.modal-count-down {
+  background-color: transparent;
+  z-index: 2;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.modal-restart-game {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 7;
+  display: none;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+.restart-game-wrapper {
+  background: url("../../assets/img/register/Rectangle.png") no-repeat;
+  background-size: 100% 100%;
+  width: 824px;
+  height: 560px;
+  border-radius: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 40px;
+}
+
+.restart-game-header h2 {
+  color: #222;
+  text-align: center;
+  font-family: "Pacifico", sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: capitalize;
+  transform: translateY(50%);
+}
+
+.restart-game-header img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.restart-game-button-close {
+  background: url("../img/register/ico-close.48084f2c.png") no-repeat 50%;
+  width: 94px;
+  height: 94px;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: transparent;
+  background-size: contain;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.restart-game-button-close:hover {
+  filter: brightness(60%);
+}
+
+.modal-count-down > span {
+  color: #222;
+  text-align: center;
+  font-family: "Pacifico", sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.count-down-text {
+  font-size: 240px;
+  color: #222;
+  text-align: center;
+}
+
+.final-score-text {
+  color: #222;
+  text-align: center;
+  font-family: "Pacifico", sans-serif;
+  font-size: 172px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 240px;
+}
+
+.restart-game-text,
+.cancel-game-text {
+  color: #fff;
+  text-align: center;
+  font-family: "Quicksand";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.choices-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.choices-group button {
+  width: 47%;
+}
+
+/* ------------------------------------------- Toolbar ------------------------------------------- */
+.play-page-toolbar {
+  position: fixed;
+  bottom: 17px;
+  right: 13px;
+  width: 70px;
+  z-index: 6;
+}
+
+.music-icon,
+.volumn-icon,
+.pause-icon {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+}
+
+.music-icon {
+  background: url("../img/toolbar/download-10.png") no-repeat;
+}
+
+.volumn-icon {
+  background: url("../img/toolbar/download-11.png") no-repeat;
+}
+
+.pause-icon {
+  background: url("../img/toolbar/download-12.png") no-repeat;
+}
+
+.toolbar-icon-toggle {
+  filter: brightness(60%);
+}
+
+/* ------------------------------------------- Mobile mode ------------------------------------------- */
+.mobile-menu-icon {
+  background: url("../../assets/img/general/game-element-03.png") no-repeat;
+  width: 64px;
+  height: 100%;
+  flex-shrink: 0;
+  background-size: contain;
+  padding: 0;
+  display: none;
+}
+
+.mobile-icon-close {
+  background: url("../../assets/img/register/ico-close.48084f2c.png") no-repeat 50%;
+  width: 52px;
+  height: 52px;
+  display: inline-block;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  background-size: contain;
+}
+
+.mobile-menu-modal {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  visibility: hidden;
+}
+
+/* ------------------------------------------- Custom scrollbar ------------------------------------------- */
+::-webkit-scrollbar-thumb {
+  background-color: #ef1c24;
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* ------------------------------------------- Settingpage ------------------------------------------- */
+.setting-page .main-bottom-content {
+  padding: 16px;
+  flex-direction: column;
+}
+
+.setting-page-container {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  padding-right: 8px;
+}
+
+.setting-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 24px;
+}
+
+.setting-container:first-child {
+  margin-top: 0;
+}
+
+.setting-content {
+  padding: 0;
+}
+
+.setting-content:first-child {
+  width: 60%;
+}
+
+.setting-content:nth-child(2) {
+  width: 40%;
+}
+
+.setting-title {
+  color: #222;
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.setting-item-1 {
+  width: 50%;
+  padding-right: 16px;
+}
+
+.setting-item-2 {
+  width: 50%;
+}
+
+.setting-item-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  width: 100%;
+  position: relative;
+}
+
+.setting-item label {
+  color: #777;
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  cursor: pointer;
+  margin: 0;
+}
+
+.setting-item-input-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100%;
+}
+
+.setting-item-input-wrapper img {
+  cursor: pointer;
+}
+
+.setting-item-input {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 11px;
+  border-radius: 5px;
+  border: 1px solid #d8d8d8;
+  background: #fff;
+  color: #fff;
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  overflow: hidden;
+  border-radius: 26px;
+  background: linear-gradient(
+    90deg,
+    rgba(237, 133, 0, 0.19) 0%,
+    rgba(112, 21, 0, 0.93) 100%
+  );
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.6) inset;
+  border: none;
+}
+
+.image-input-content {
+  border-radius: 36px;
+  background: linear-gradient(90deg, #821800 0%, #ed8500 100%);
+  padding: 8px 10px;
+  flex: 1;
+}
+
+.setting-item-input span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 16px;
+}
+
+input.setting-item-input:focus,
+input.setting-item-input:not(:focus) {
+  outline: none;
+}
+
+.setting-add-button {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: #ef1c24;
+  border: none;
+}
+
+.setting-add-button i {
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.setting-item-character {
+  width: 100%;
+}
+
+.delete-icon {
+  display: flex;
+  /* flex: 1; */
+  width: 48px;
+  height: 48px;
+}
+
+label.error {
+  font-size: 14px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+  color: #ef1c24 !important;
+}
+
+.empty-element {
+  border: 4px solid #ef1c24;
+}
+
+.preview-product-image,
+.preview-character-image {
+  display: block;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 10;
+  background-color: #fff;
+  height: 0;
+  text-align: center;
+  border-radius: 5px;
+  transition: height 0.3s linear;
+}
+
+.preview-product-image {
+  max-width: 160px;
+}
+
+.preview-character-image {
+  max-width: 100%;
+}
+
+.custom-select {
+  color: #fff;
+  border-radius: 26px;
+  background: linear-gradient(
+    90deg,
+    rgba(237, 133, 0, 0.19) 0%,
+    rgba(112, 21, 0, 0.93) 100%
+  );
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.6) inset;
+  border: none;
+}
+
+.upload-icon {
+  color: #fff;
+}
+
+.custom-select option {
+  background-color: #924400 !important;
+  color: #fff !important;
+}
+
+select option:hover {
+  box-shadow: 0 0 10px 100px #1882A8 inset;
+}
+
+.setting-content.general-setting{
+  width: 50%;
+}
+
+.general-setting .setting-item {
+  width: 60%;
+}
+
+.setting-content.general-setting{
+  width: 100%;
+}
+
+.general-setting .setting-item {
+  display: flex;
+  align-items: center;
+}
+
+.general-setting .image-input-content {
+  width: 60%;
+  flex: unset;
+}
+
+.general-setting label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 16px;
+  height: 100%;
+}
+
+#save-setting-button {
+  width: 60%;
+}
+
+label.error {
+  color: #fff !important;
+}
+
+/* ------------------------------------------- Alertifyjs ------------------------------------------- */
+.ajs-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ------------------------------------------- Bootstrap Tooltip ------------------------------------------- */
+.tooltip {
+  opacity: 0;
+  transition: opacity ease-in-out 0.3s !important;
+}
+
+.tooltip .show {
+  opacity: 1;
+}
+
+.tooltip-inner {
+  background-color: #ef1c24;
+  color: #fff;
+  font-size: 16px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+}
+
+.bs-tooltip-bottom .arrow::before,
+.bs-tooltip-auto[x-placement^="bottom"] .arrow::before {
+  border-bottom-color: #ef1c24 !important;
+}
+
+input.error {
+  border: solid 1px #ff0000;
+}

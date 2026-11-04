@@ -1,0 +1,917 @@
+@media (max-width: 1199.98px) {
+  .home-bottom-content-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 0 !important;
+    margin-top: 40px;
+  }
+
+  .primary-button {
+    width: 100% !important;
+  }
+
+  #header-navbar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    background-color: #fff;
+    height: 100%;
+    z-index: 99999;
+  }
+
+  #header-navbar .nav-item {
+    border: 1px solid #ccc;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .nav-link {
+    color: #222;
+  }
+
+  .nav-link:hover {
+    color: #ef1c24;
+  }
+
+  .header-item-active {
+    color: #ef1c24;
+  }
+
+  #header-navbar {
+    transform: translateX(100%);
+    transition: transform ease-in-out 0.3s;
+  }
+
+  .mobile-menu-icon,
+  .mobile-icon-close {
+    display: block !important;
+  }
+
+  #header-navbar .nav-item:first-child {
+    display: flex !important;
+    justify-content: space-between;
+    padding: 8px;
+  }
+
+  .restart-game-text,
+  .cancel-game-text {
+    font-size: 48px !important;
+  }
+
+  .register-wrapper {
+    width: 100% !important;
+    padding: 24px !important;
+  }
+
+  .register-header {
+    margin-bottom: 12px !important;
+  }
+
+  .register-header h2 {
+    font-size: 42px !important;
+  }
+
+  .register-header button {
+    width: 80px !important;
+    height: 80px !important;
+    background-size: contain !important;
+  }
+
+  .register-footer {
+    flex-direction: column-reverse;
+    margin-top: 0 !important;
+  }
+
+  .register-footer button {
+    width: 80% !important;
+    font-size: 18px !important;
+  }
+
+  .input-text {
+    margin-bottom: 12px !important;
+  }
+
+  .choices-group button {
+    width: 100% !important;
+    font-size: 32px !important;
+    margin-bottom: 15px !important;
+  }
+
+  .rank-page .main-bottom-content {
+    padding: 16px 0 !important;
+  }
+
+  .table-container {
+    padding: 0 16px !important;
+  }
+
+  .restart-game-wrapper {
+    padding: 16px !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  h1 {
+    font-size: 28px !important;
+  }
+
+  .product-list-content {
+    width: 50% !important;
+  }
+
+  .checkbox-accept-rules {
+    font-size: 16px !important;
+    text-align: end;
+  }
+
+  .restart-game-button-close {
+    width: 64px !important;
+    height: 64px !important;
+  }
+
+  .choices-group {
+    flex-direction: column-reverse;
+  }
+
+  .choices-group button {
+    margin-bottom: 12px !important;
+  }
+
+  .restart-game-header h2 {
+    font-size: 28px !important;
+    transform: translateY(72px) !important;
+  }
+
+  .final-score-text {
+    font-size: 148px !important;
+  }
+
+  .register-footer button {
+    width: 100% !important;
+    margin-top: 12px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .rules-checkbox {
+    flex-direction: row;
+    align-items: center !important;
+  }
+
+  .rules-container {
+    padding: 16px !important;
+  }
+
+  #header-navbar {
+    font-size: 18px !important;
+  }
+
+  .timer-site {
+    background-size: contain !important;
+    width: 100% !important;
+    height: 46px !important;
+    padding: 16px 6px 0 36px !important;
+  }
+
+  .timer-range {
+    height: 12px !important;
+  }
+
+  .character-card-list {
+    margin-top: 0 !important;
+    padding-top: 14% !important;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    justify-content: unset !important;
+  }
+
+  .character-card {
+    height: 120px !important;
+    background-size: cover !important;
+  }
+
+  .main-bottom-content {
+    padding: 0px !important;
+  }
+
+  .main-bottom-content {
+    background: url("../../assets/img/general/Rectangle.png") no-repeat !important;
+    background-size: cover !important;
+    border-radius: 10px !important;
+  }
+
+  .crown-img {
+    background-size: contain !important;
+    width: 46px !important;
+    height: 46px !important;
+  }
+
+  .current-score {
+    background-size: cover !important;
+    width: 103px !important;
+    height: 46px !important;
+    font-size: 16px !important;
+  }
+
+  .play-top-site-left,
+  .play-top-site-right {
+    width: 50% !important;
+  }
+
+  .product-list-content:nth-child(3),
+  .product-list-content:nth-child(4) {
+    margin-top: 4%;
+  }
+
+  .product-card-name {
+    font-size: 16px !important;
+  }
+
+  .name-correct {
+    background-size: contain !important;
+    width: 140px !important;
+    height: 140px !important;
+    padding-top: 24px !important;
+    right: -30px !important;
+    top: -40% !important;
+  }
+
+  .name-correct span {
+    font-size: 14px !important;
+  }
+
+  .restart-game-button-close {
+    width: 64px !important;
+    height: 64px !important;
+    transform: translateY(24%);
+  }
+
+  .count-down-text {
+    font-size: 240px !important;
+  }
+
+  .number-correct {
+    top: 0 !important;
+    left: unset !important;
+    right: 0 !important;
+    background-size: contain !important;
+    width: 56px !important;
+    height: 56px !important;
+  }
+
+  .number-correct span:first-child {
+    font-size: 24px !important;
+    padding-top: 0 !important;
+  }
+
+  .number-correct span:nth-child(2) {
+    font-size: 32px !important;
+  }
+
+  .modal-count-down span {
+    font-size: 28px !important;
+  }
+
+  .count-down-text {
+    font-size: 160px !important;
+  }
+
+  .play-page-toolbar {
+    right: -14% !important;
+    transform: translateX(-50%);
+  }
+
+  .music-icon,
+  .volumn-icon,
+  .pause-icon {
+    background-size: contain !important;
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .brand-header-logo {
+    width: 240px !important;
+  }
+
+  #home-page .main-bottom-content {
+    background: unset !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  #home-page .main-bottom-content-row {
+    overflow: unset !important;
+  }
+
+  .main-site {
+    align-items: flex-start !important;
+  }
+
+  .main-top-site {
+    height: 10vh !important;
+    align-items: center !important;
+  }
+
+  .home-page-list li {
+    margin-bottom: 16px !important;
+  }
+
+  .home-page-list li span {
+    font-size: 24px !important;
+  }
+
+  .home-page-list li p {
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: normal !important;
+  }
+
+  .home-bottom-content-right {
+    margin-top: 16px !important;
+    padding: 0 !important;
+  }
+
+  .primary-button a {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    line-height: normal !important;
+  }
+
+  .rules-page .main-bottom-content,
+  .rank-page .main-bottom-content {
+    background: url("../../assets/img/general/Rectangle.png") no-repeat !important;
+    background-size: cover !important;
+    border-radius: 10px !important;
+    height: 80vh !important;
+  }
+
+  .prize-page .main-bottom-content {
+    height: 80vh !important;
+    padding: 16px !important;
+  }
+
+  .setting-container {
+    flex-direction: column !important;
+  }
+
+  .setting-content {
+    padding: 16px !important;
+    width: 100% !important;
+  }
+
+  .setting-item-content {
+    flex-direction: column !important;
+  }
+
+  .setting-item-1 {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .setting-item-2 {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-top: 16px !important;
+  }
+
+  .setting-item-2 .image-input-content {
+    width: 80% !important;
+  }
+
+  .setting-content.general-setting {
+    width: 100%;
+  }
+
+  .general-setting .setting-item {
+    flex-direction: column-reverse !important;
+  }
+
+  .general-setting label {
+    width: 100%;
+    padding-left: 0 !important;
+    margin-bottom: 4px !important;
+  }
+
+  .general-setting .image-input-content {
+    width: 100% !important;
+  }
+
+  #save-setting-button {
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  #header-navbar {
+    width: 60% !important;
+  }
+
+  .brand-header-logo-mobile {
+    width: 60% !important;
+  }
+
+  #header-navbar .nav-item:first-child {
+    padding: 24px 8px;
+  }
+
+  .mobile-menu-icon {
+    width: 72px !important;
+  }
+
+  .mobile-icon-close {
+    width: 72px !important;
+    height: 72px !important;
+  }
+
+  .restart-game-button-close {
+    width: 64px !important;
+    height: 64px !important;
+  }
+
+  .choices-group {
+    flex-direction: column-reverse;
+  }
+
+  .choices-group button {
+    margin-bottom: 12px !important;
+  }
+
+  .restart-game-header h2 {
+    font-size: 28px !important;
+    transform: translateY(72px) !important;
+  }
+
+  .final-score-text {
+    font-size: 148px !important;
+  }
+
+  .register-footer button {
+    width: 100% !important;
+    margin-top: 12px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .rules-checkbox {
+    flex-direction: row;
+    align-items: center !important;
+  }
+
+  .rules-container {
+    padding: 16px !important;
+  }
+
+  #header-navbar {
+    font-size: 28px !important;
+  }
+
+  .timer-site {
+    background-size: contain !important;
+    height: 72px !important;
+    padding: 24px 62px 0 58px !important;
+  }
+
+  .timer-range {
+    height: 28px !important;
+  }
+
+  .character-card-list {
+    margin-top: 0 !important;
+    padding-top: 18% !important;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    justify-content: unset !important;
+  }
+
+  .main-bottom-content {
+    padding: 0px !important;
+  }
+
+  .main-bottom-content {
+    background: url("../../assets/img/general/Rectangle.png") no-repeat !important;
+    background-size: cover !important;
+    border-radius: 10px !important;
+  }
+
+  .crown-img {
+    background-size: contain !important;
+    width: 56px !important;
+    height: 56px !important;
+  }
+
+  .current-score {
+    background-size: cover !important;
+    width: 103px !important;
+    height: 56px !important;
+    font-size: 24px !important;
+  }
+
+  .play-top-site-left,
+  .play-top-site-right {
+    width: 50% !important;
+  }
+
+  .product-card-list {
+    padding-top: 10% !important;
+  }
+
+  .product-list-content:nth-child(3),
+  .product-list-content:nth-child(4) {
+    margin-top: 4%;
+  }
+
+  .product-card-name {
+    font-size: 20px !important;
+  }
+
+  .name-correct {
+    top: -50% !important;
+  }
+
+  .restart-game-button-close {
+    width: 64px !important;
+    height: 64px !important;
+    transform: translateY(24%);
+  }
+
+  .count-down-text {
+    font-size: 240px !important;
+  }
+
+  .play-page-toolbar {
+    right: -6% !important;
+    transform: translateX(-50%);
+  }
+
+  #home-page .main-bottom-content {
+    background: url("../../assets/img/general/Rectangle.png") no-repeat !important;
+    background-size: cover !important;
+    border-radius: 10px !important;
+    padding: 16px !important;
+    height: 100% !important;
+  }
+
+  #home-page .main-bottom-content-row {
+    overflow: unset !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+
+  .main-site {
+    align-items: flex-start !important;
+  }
+
+  .main-top-site {
+    height: 10vh !important;
+    align-items: center !important;
+  }
+
+  .home-page-list li {
+    margin-bottom: 16px !important;
+  }
+
+  .home-bottom-content-right {
+    margin-top: 16px !important;
+    padding: 0 !important;
+  }
+
+  .rules-page .main-bottom-content,
+  .rank-page .main-bottom-content {
+    background: url("../../assets/img/general/Rectangle.png") no-repeat !important;
+    background-size: cover !important;
+    border-radius: 10px !important;
+  }
+
+  .prize-page .main-bottom-content {
+    padding: 16px !important;
+  }
+
+  .setting-container {
+    flex-direction: column !important;
+  }
+
+  .setting-content {
+    padding: 16px !important;
+    width: 100% !important;
+  }
+
+  .setting-item-content {
+    flex-direction: column !important;
+  }
+
+  .setting-item-1 {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .setting-item-2 {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-top: 16px !important;
+  }
+
+  .setting-item-2 .image-input-content {
+    width: 80% !important;
+  }
+
+  .setting-content.general-setting {
+    width: 100%;
+  }
+
+  .general-setting .setting-item {
+    flex-direction: column-reverse !important;
+  }
+
+  .general-setting label {
+    width: 100%;
+    padding-left: 0 !important;
+    margin-bottom: 4px !important;
+  }
+
+  .general-setting .image-input-content {
+    width: 100% !important;
+  }
+
+  #save-setting-button {
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .mobile-menu-icon {
+    width: 82px !important;
+  }
+
+  .mobile-icon-close {
+    width: 56px !important;
+    height: 56px !important;
+  }
+
+  .restart-game-button-close {
+    width: 64px !important;
+    height: 64px !important;
+  }
+
+  .choices-group {
+    flex-direction: column-reverse;
+  }
+
+  .choices-group button {
+    margin-bottom: 12px !important;
+  }
+
+  .restart-game-header h2 {
+    font-size: 28px !important;
+    transform: translateY(72px) !important;
+  }
+
+  .final-score-text {
+    font-size: 148px !important;
+  }
+
+  .register-footer button {
+    width: 100% !important;
+    margin-top: 12px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .rules-checkbox {
+    flex-direction: row;
+    align-items: center !important;
+  }
+
+  .rules-container {
+    padding: 16px !important;
+  }
+
+  #header-navbar {
+    font-size: 32px !important;
+  }
+
+  .character-card-list {
+    margin-top: 0 !important;
+    padding-top: 12% !important;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    justify-content: unset !important;
+  }
+
+  .main-bottom-content {
+    padding: 0px !important;
+  }
+
+  .main-bottom-content {
+    background: url("../../assets/img/general/Rectangle.png") no-repeat !important;
+    background-size: cover !important;
+    border-radius: 10px !important;
+  }
+
+  .product-card-list {
+    padding-top: 8% !important;
+  }
+
+  .product-list-content:nth-child(3),
+  .product-list-content:nth-child(4) {
+    margin-top: 6%;
+  }
+
+  .name-correct {
+    top: -50% !important;
+  }
+
+  .restart-game-button-close {
+    width: 64px !important;
+    height: 64px !important;
+    transform: translateY(24%);
+  }
+
+  .count-down-text {
+    font-size: 240px !important;
+  }
+
+  #home-page .main-bottom-content {
+    background: url("../../assets/img/general/Rectangle.png") no-repeat !important;
+    background-size: cover !important;
+    border-radius: 10px !important;
+    padding: 16px !important;
+    height: 100% !important;
+  }
+
+  #home-page .main-bottom-content-row {
+    overflow: unset !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+
+  .main-site {
+    align-items: flex-start !important;
+  }
+
+  .main-top-site {
+    height: 10vh !important;
+    align-items: center !important;
+  }
+
+  .home-page-list li {
+    margin-bottom: 16px !important;
+  }
+
+  .home-bottom-content-right {
+    margin-top: 16px !important;
+    padding: 0 !important;
+  }
+
+  .rules-page .main-bottom-content,
+  .rank-page .main-bottom-content {
+    background: url("../../assets/img/general/Rectangle.png") no-repeat !important;
+    background-size: cover !important;
+    border-radius: 10px !important;
+  }
+
+  .prize-page .main-bottom-content {
+    padding: 16px !important;
+  }
+
+  .setting-container {
+    flex-direction: column !important;
+  }
+
+  .setting-content {
+    padding: 16px !important;
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .mobile-menu-icon {
+    width: 108px !important;
+  }
+
+  .mobile-icon-close {
+    width: 56px !important;
+    height: 56px !important;
+  }
+
+  .choices-group button {
+    width: 47% !important;
+    margin-bottom: 12px !important;
+  }
+
+  .restart-game-header h2 {
+    font-size: 28px !important;
+    transform: translateY(72px) !important;
+  }
+
+  .final-score-text {
+    font-size: 148px !important;
+  }
+
+  .register-footer {
+    flex-direction: row !important;
+  }
+
+  .register-footer button {
+    width: 47% !important;
+    margin-top: 12px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .rules-checkbox {
+    flex-direction: row;
+    align-items: center !important;
+  }
+
+  .rules-container {
+    padding: 16px !important;
+  }
+
+  #header-navbar {
+    font-size: 32px !important;
+  }
+
+  .character-card-list {
+    margin-top: 0 !important;
+    padding-top: 12% !important;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .main-bottom-content {
+    padding: 0px !important;
+  }
+
+  .main-bottom-content {
+    background: url("../../assets/img/general/Rectangle.png") no-repeat !important;
+    background-size: cover !important;
+    border-radius: 10px !important;
+  }
+
+  .product-card-list {
+    padding-top: 8% !important;
+  }
+
+  .name-correct {
+    top: -50% !important;
+  }
+
+  .count-down-text {
+    font-size: 240px !important;
+  }
+
+  #home-page .main-bottom-content {
+    background: url("../../assets/img/general/Rectangle.png") no-repeat !important;
+    background-size: cover !important;
+    border-radius: 10px !important;
+    padding: 16px !important;
+  }
+
+  #home-page .main-bottom-content-row {
+    overflow-y: auto !important;
+    justify-content: space-between !important;
+  }
+
+  .main-site {
+    align-items: flex-start !important;
+  }
+
+  .main-top-site {
+    height: 10vh !important;
+    align-items: center !important;
+  }
+
+  .home-page-list li {
+    margin-bottom: 16px !important;
+  }
+
+  .home-bottom-content-right {
+    margin-top: 16px !important;
+    padding: 0 !important;
+  }
+
+  .rules-page .main-bottom-content,
+  .rank-page .main-bottom-content {
+    background: url("../../assets/img/general/Rectangle.png") no-repeat !important;
+    background-size: cover !important;
+    border-radius: 10px !important;
+  }
+
+  .prize-page .main-bottom-content {
+    padding: 16px !important;
+  }
+
+  .setting-page-container {
+    padding: 16px !important;
+  }
+}

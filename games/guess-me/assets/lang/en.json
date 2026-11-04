@@ -1,0 +1,59 @@
+{
+  "Play Game": "Play game",
+  "startGame": "Start game",
+  "Your Score": "The score you got",
+  "Cancel": "Cancel",
+  "Restart Game": "Restart",
+  "register": "Register",
+  "back": "Back",
+  "sendScore": "Send score",
+  "agreeWith": "I agree with",
+  "programRules": " Program rules",
+
+  "Game start after": "Game start after",
+
+  "rules":"Rules",
+
+  "prize":"Prize list",
+
+  "rank": "Rank",
+  "###":"No",
+  "Full name":"Full Name",
+  "E-mail":"Email",
+  "Phone":"Phone Number",
+  "Score":"Score",
+
+  "setting":"Setting",
+  "imageLabel-settingPage": "Image",
+  "productName-settingPage": "Product name",
+  "productSetting": "Product setting",
+  "characterSetting": "Character setting",
+  "generalSetting": "General Setting",
+  "countDownLabel": "Countdown time",
+  "gameTimeLabel":"Game time",
+  "productScoreLabel":"Product score",
+  "maxProductLabel":"Maximum number of products",
+  "levelTimeLabel": "Level time",
+  "difficultyLevelLabel": "Difficulty Level",
+  "displayLanguageLabel": "Displayed Language",
+
+  "saveSuccess": "Save successfully!",
+  "reloadPage": "Please reload page!",
+  "deleteSuccess": "Delete successfully!",
+  "deleteFail": "Delete failed!",
+
+  "pleaseInputValue" : "Please enter value ",
+  "mustBeNumber": " must be a number",
+  "mustBePositive": " must be a positive number",
+
+  "requiredEnterProductAndCharacter": "Please enter full product and character information!",
+  "requiredEnterProduct": "Please enter full product information!",
+  "requiredEnterCharacter": "Please enter full character information!",
+  "requiredEnterGeneral": "Please enter full general information!",
+
+  "confirmDeleteProduct":"Are you sure to delete this product?",
+  "confirmDeleteCharacter":"Are you sure to delete this character?",
+
+  "requiredFields": "Please enter full information!",
+  "invalidPhoneNumber": "Phone number is invalid!" 
+}

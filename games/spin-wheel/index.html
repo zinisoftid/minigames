@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spin Wheel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/template.css" />
+    <link rel="icon" href="./assets/img/more-turns.png" />
+  </head>
+
+  <body>
+    <section class="section-wrapper section">
+      <div class="header">
+        <a class="logo" href="/">
+          <img src="./assets/img/logo.png" alt="logo" />
+        </a>
+        <div class="right-item-menu">Menu</div>
+        <div id="right-box" class="right-bar right-menu">
+          <div class="item-close-menu">
+            <img src="./assets/img/icon-close.png" alt="icon close" />
+          </div>
+          <div id="to-play" class="item-right-bar active">Play Game</div>
+          <div id="to-rules" class="item-right-bar">Rules</div>
+          <div id="to-price" class="item-right-bar">Prize</div>
+          <div id="to-rank" class="item-right-bar">Ranks</div>
+        </div>
+      </div>
+      <div class="title-heading">Play Game</div>
+    </section>
+    <section class="section-inner section-play section active">
+      <div class="background-inner">
+        <div class="spin">
+          <div class="background-oval">
+            <div class="circle-inner"></div>
+            <div class="circle-outer"></div>
+          </div>
+        </div>
+        <div class="wrap-right">
+          <div class="content-right">
+            <span class="content-number">01. </span>
+            <span class="content-text"
+              >Press the “Start” button to start playing</span
+            >
+          </div>
+          <div class="content-right">
+            <span class="content-number">02. </span>
+            <span class="content-text"
+              >Each player will have 5 spins, after each draw points or rewards
+              will be added to the player's account</span
+            >
+          </div>
+          <div class="content-right">
+            <span class="content-number">03. </span>
+            <span class="content-text"
+              >Use the points you get to exchange for rewards</span
+            >
+          </div>
+          <div class="inner-footer">
+            <button id="btn-start" class="btn-cus btn-spin">START GAME</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-inner section-playing section">
+      <div class="background-inner">
+        <div class="countdown-play">
+          <div class="title">Game Start</div>
+          <div class="countdown">3</div>
+        </div>
+        <div class="playing">
+          <div class="inner-header">
+            <div class="item">
+              <div class="item-icon">
+                <img src="./assets/img/icon-turn.png" alt="icon" />
+              </div>
+              <div class="item-count">x<span id="user-spin"></span></div>
+            </div>
+            <div class="item">
+              <div class="item-icon">
+                <img src="./assets/img/icon-point.png" alt="icon" />
+              </div>
+              <div class="item-count">x<span id="user-point"></span></div>
+            </div>
+          </div>
+          <div class="spin">
+            <div class="background-oval">
+              <div class="circle-inner"></div>
+              <div class="circle-outer"></div>
+            </div>
+          </div>
+          <div class="inner-footer">
+            <button id="spin" class="btn-cus btn-spin">START</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-popup">
+      <div class="popup" id="popup">
+        <div id="price-point" class="popup-gift">
+          <div class="star">
+            <img src="./assets/img/star.png" alt="" />
+          </div>
+          <form class="content">
+            <div class="content-price">
+              <div id="content-point-title" class="title">Your Points</div>
+              <div id="content-point-count" class="point">30</div>
+            </div>
+            <!-- <div class="box-btn">
+              <button type="button" class="btn-cus btn-popup btn-login">
+                LOGIn
+              </button>
+              <button type="submit" class="btn-cus btn-popup btn-sent-point">
+                SENd POINT
+              </button>
+            </div> -->
+            <div class="btn-close">
+              <img src="./assets/img/icon-close.png" alt="icon-close" />
+            </div>
+          </form>
+        </div>
+        <div id="price-spin" class="popup-gift">
+          <div class="star">
+            <img src="./assets/img/star.png" alt="" />
+          </div>
+          <form class="content">
+            <div class="content-price">
+              <div id="content-spin-title" class="title">
+                You Have Extra Spin
+              </div>
+              <div class="point">
+                <span class="point-x">x</span>
+                <span id="content-spin-count">1</span>
+              </div>
+            </div>
+            <!-- <div class="box-btn">
+              <button type="button" class="btn-cus btn-popup btn-login">
+                LOGIN
+              </button>
+              <button type="submit" class="btn-cus btn-popup btn-sent-point">
+                SEND POINT
+              </button>
+            </div> -->
+            <div class="btn-close">
+              <img src="./assets/img/icon-close.png" alt="icon-close" />
+            </div>
+          </form>
+        </div>
+        <div id="price-gift" class="popup-gift">
+          <div class="star">
+            <img src="./assets/img/star.png" alt="" />
+          </div>
+          <form class="content">
+            <div class="content-price">
+              <div id="content-gift-title" class="title">
+                You Received a Gift
+              </div>
+              <div class="gift">
+                <img
+                  class="gift-img"
+                  src="./assets/img/icon-gift.png"
+                  alt="gift"
+                />
+                <div id="content-gift-name" class="gift-name">1 Voucher</div>
+              </div>
+            </div>
+            <!-- <div class="box-btn">
+              <button type="button" class="btn-cus btn-popup btn-login">
+                LOGIN
+              </button>
+              <button type="submit" class="btn-cus btn-popup btn-sent-point">
+                SEND POINT
+              </button>
+            </div> -->
+            <div class="btn-close">
+              <img src="./assets/img/icon-close.png" alt="icon-close" />
+            </div>
+          </form>
+        </div>
+        <div id="price-message" class="popup-gift">
+          <div class="star">
+            <img src="./assets/img/star.png" alt="" />
+          </div>
+          <form class="content">
+            <div class="content-price">
+              <div id="content-message-title" class="title">
+                You Received 1 Wish
+              </div>
+              <div id="content-message-text" class="message">
+                Wish you have a wonderful day!
+              </div>
+            </div>
+            <!-- <div class="box-btn">
+              <button type="button" class="btn-cus btn-popup btn-login">
+                LOGIN
+              </button>
+              <button type="submit" class="btn-cus btn-popup btn-sent-point">
+                SEND POINT
+              </button>
+            </div> -->
+            <div class="btn-close">
+              <img src="./assets/img/icon-close.png" alt="icon-close" />
+            </div>
+          </form>
+        </div>
+        <div id="no-spin" class="popup-gift">
+          <div class="star">
+            <img src="./assets/img/star.png" alt="" />
+          </div>
+          <form class="content">
+            <div class="title">Sorry</div>
+            <div class="content-price">
+              <div class="message">You have run out of spins!</div>
+            </div>
+            <!-- <div class="box-btn">
+              <button type="button" class="btn-cus btn-popup btn-login">
+                LOGIN
+              </button>
+              <button type="submit" class="btn-cus btn-popup btn-sent-point">
+                SEND POINT
+              </button>
+            </div> -->
+            <div class="btn-close">
+              <img src="./assets/img/icon-close.png" alt="icon-close" />
+            </div>
+          </form>
+        </div>
+        <div class="popup-login">
+          <form class="content">
+            <div class="title">LOGIN</div>
+            <div class="description">Enter your phone number to get points</div>
+            <div class="wrap-input">
+              <input
+                id="input-login-tel"
+                class="input-tel"
+                placeholder="Phone Number"
+              />
+            </div>
+            <div class="box-btn">
+              <button type="button" class="btn-cus btn-popup btn-signup">
+                REGISTER
+              </button>
+              <button type="submit" class="btn-cus btn-popup btn-sent-point">
+                SEND POINT
+              </button>
+            </div>
+            <div class="btn-close">
+              <img src="./assets/img/icon-close.png" alt="icon-close" />
+            </div>
+          </form>
+        </div>
+        <div class="popup-signup">
+          <form class="content">
+            <div class="title">REGISTER</div>
+            <div class="wrap-input">
+              <input
+                id="input-login-tel"
+                class="input-tel"
+                placeholder="Full Name"
+              />
+            </div>
+            <div class="wrap-input">
+              <input
+                id="input-login-tel"
+                class="input-tel"
+                placeholder="Phone Number"
+              />
+            </div>
+            <div class="wrap-input">
+              <input
+                id="input-login-tel"
+                class="input-tel"
+                placeholder="Email"
+              />
+            </div>
+            <div class="wrap-checkbox">
+              <input type="checkbox" class="input-check" />
+              <label for="custom-checkbox"></label>
+              <span class="title-checkbox">
+                I agree with
+                <span id="show-rules" class="text"> the game rules</span>
+              </span>
+            </div>
+            <div class="box-btn">
+              <button type="button" class="btn-cus btn-popup btn-back">
+                BACK
+              </button>
+              <button type="submit" class="btn-cus btn-popup btn-sent-point">
+                SEND POINT
+              </button>
+            </div>
+            <div class="btn-close">
+              <img src="./assets/img/icon-close.png" alt="icon-close" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="section-inner section-rules section">
+      <div class="background-inner">
+        <div class="wrap-right">
+          <div class="content-right">
+            <span class="content-number">01. </span>
+            <span class="content-text"
+              >Lorem ipsum is placeholder Text commonly used in the graphic,
+              print, and publishing industries for previewing layouts and visual
+              mockups.</span
+            >
+          </div>
+          <div class="content-right">
+            <span class="content-number">02. </span>
+            <span class="content-text"
+              >Lorem ipsum dolor sit amet, Consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non.</span
+            >
+          </div>
+          <div class="content-right">
+            <span class="content-number">03. </span>
+            <span class="content-text"
+              >Lorem ipsum dolor sit amet, Lorem ipsum, or lipsum as it is
+              sometimes known, is dummy text used in laying out print, graphic
+              or web designs. The passage is attributed to an unknown typesetter
+              in the 15th century who is thought to have scrambled parts of
+              Cicero's De Finibus Bonorum et Malorum for use in a type specimen
+              book. It usually begins with.</span
+            >
+          </div>
+          <div class="content-right">
+            <span class="content-number">04. </span>
+            <span class="content-text"
+              >Lorem ipsum dolor sit amet, The purpose of lorem ipsum is to
+              create a natural looking block of text (sentence, paragraph, page,
+              etc.) that doesn't distract from the layout. A practice not
+              without controversy, laying out pages with meaningless filler text
+              can be very useful when the focus is meant to be on design, not
+              content.</span
+            >
+          </div>
+          <div class="content-right">
+            <span class="content-number">05. </span>
+            <span class="content-text"
+              >Lorem ipsum dolor sit amet, The purpose of lorem ipsum is to
+              create a natural looking block of text (sentence, paragraph, page,
+              etc).</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-inner section-price section">
+      <div class="background-inner">
+        <span class="text">
+          Lorem ipsum dolor sit amet, The purpose of lorem ipsum is to create a
+          natural looking block of text (sentence, paragraph, page, etc.) that
+          doesn't distract from the layout. A practice not without controversy,
+          laying out pages with meaningless filler text can be very useful when
+          the focus is meant to be on design, not content.
+        </span>
+        <div class="price">
+          <div class="item-price">
+            <div class="background-price">
+              <img
+                src="./assets/img/item-price.png"
+                alt="price"
+                class="img-price"
+              />
+            </div>
+            <div class="price-name">
+              1<span class="name-text">First prize</span>
+            </div>
+            <div class="item-name">Retro TV</div>
+          </div>
+          <div class="item-price">
+            <div class="background-price">
+              <img
+                src="./assets/img/item-price.png"
+                alt="price"
+                class="img-price"
+              />
+            </div>
+            <div class="price-name">
+              3<span class="name-text">Second prize</span>
+            </div>
+            <div class="item-name">Camera</div>
+          </div>
+          <div class="item-price">
+            <div class="background-price">
+              <img
+                src="./assets/img/item-price.png"
+                alt="price"
+                class="img-price"
+              />
+            </div>
+            <div class="price-name">
+              5<span class="name-text">Third Prize</span>
+            </div>
+            <div class="item-name">Voucher Gift</div>
+          </div>
+        </div>
+        <span class="text">
+          Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+          non.
+        </span>
+      </div>
+    </section>
+    <section class="section-inner section-rank section">
+      <div class="background-inner">
+        <table class="table-rank">
+          <tr>
+            <th>#</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Point</th>
+          </tr>
+          <tr>
+            <td>
+              <img
+                class="img-icon-rank"
+                src="./assets/img/icon-rank-1.png"
+                alt="1"
+              />
+            </td>
+            <td>Phạm Quốc Toàn</td>
+            <td>xxxxxxxxxxx.com</td>
+            <td>1234567890</td>
+            <td>162</td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                class="img-icon-rank"
+                src="./assets/img/icon-rank-2.png"
+                alt="2"
+              />
+            </td>
+            <td>Trần An Vinh</td>
+            <td>xxxxxxxxxxx.com</td>
+            <td>1234567890</td>
+            <td>159</td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                class="img-icon-rank"
+                src="./assets/img/icon-rank-3.png"
+                alt="3"
+              />
+            </td>
+            <td>Võ Thị Thùy Anh</td>
+            <td>xxxxxxxxxxx.com</td>
+            <td>1234567890</td>
+            <td>154</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Lê Hải Đăng</td>
+            <td>xxxxxxxxxxx.com</td>
+            <td>1234567890</td>
+            <td>149</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Võ Thiên Thành</td>
+            <td>xxxxxxxxxxx.com</td>
+            <td>1234567890</td>
+            <td>138</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Võ Thiên Thành</td>
+            <td>xxxxxxxxxxx.com</td>
+            <td>1234567890</td>
+            <td>123</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Lê Tường An</td>
+            <td>xxxxxxxxxxx.com</td>
+            <td>1234567890</td>
+            <td>121</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Phạm Ngọc Cường</td>
+            <td>xxxxxxxxxxx.com</td>
+            <td>1234567890</td>
+            <td>118</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Phan Đăng Quốc Phong</td>
+            <td>xxxxxxxxxxx.com</td>
+            <td>1234567890</td>
+            <td>109</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Trần Đăng Khoa</td>
+            <td>xxxxxxxxxxx.com</td>
+            <td>1234567890</td>
+            <td>105</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+    <div class="box-audio">
+      <div class="music">
+        <img
+          src="./assets/img/music.png"
+          alt="music on"
+          class="icon-music icon-music-on active"
+        />
+        <img
+          src="./assets/img/music-off.png"
+          alt="music off"
+          class="icon-music icon-music-off"
+        />
+      </div>
+      <div class="sound">
+        <img
+          src="./assets/img/sound.png"
+          alt="sound on"
+          class="icon-sound icon-sound-on active"
+        />
+        <img
+          src="./assets/img/sound-off.png"
+          alt="sound off"
+          class="icon-sound icon-sound-off"
+        />
+      </div>
+    </div>
+    <audio id="musicPlayer" loop>
+      <source src="./assets/music/sound-track.mp3" type="audio/mpeg" />
+      Trình duyệt của bạn không hỗ trợ thẻ audio.
+    </audio>
+    <audio id="soundSpin">
+      <source src="./assets/music/sound-spin.mp3" type="audio/mpeg" />
+      Trình duyệt của bạn không hỗ trợ thẻ audio.
+    </audio>
+    <audio id="soundPrice">
+      <source src="./assets/music/sound-popup.mp3" type="audio/mpeg" />
+      Trình duyệt của bạn không hỗ trợ thẻ audio.
+    </audio>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
