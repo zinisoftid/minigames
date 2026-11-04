@@ -1,0 +1,42 @@
+{
+  "groups": {
+    "marketing-fnb": { "en": "Marketing: food and drink" },
+    "education": { "en": "Education" }
+  },
+  "games": [
+    {
+      "id": "guess-me",
+      "title": "Guess Me",
+      "path": "games/guess-me/",
+      "group": "marketing-fnb",
+      "tech": "html",
+      "status": "ready",
+      "textKey": "guessMeText",
+      "tags": [{ "text": "EN" }, { "text": "VI" }, { "key": "tagScore" }],
+      "art": [
+        "games/guess-me/assets/img/characters/character-1-normal.7f3e9793.svg",
+        "games/guess-me/assets/img/products/product-1.bf2fbdc6.svg",
+        "games/guess-me/assets/img/characters/character-3-normal.3fb1a4d6.svg"
+      ]
+    },
+    {
+      "id": "spin-wheel",
+      "title": "Lucky Spin",
+      "path": "games/spin-wheel/",
+      "group": "marketing-fnb",
+      "tech": "html",
+      "status": "ready",
+      "textKey": "luckySpinText",
+      "tags": [{ "key": "tagPrizes" }, { "key": "tagRanking" }],
+      "art": ["games/spin-wheel/assets/img/circle-inner.svg"],
+      "artClass": "wheel"
+    },
+    {
+      "id": "education-soon",
+      "titleKey": "eduTitle",
+      "group": "education",
+      "status": "soon",
+      "textKey": "eduText"
+    }
+  ]
+}

@@ -12,7 +12,7 @@
 
 body {
     font-size: 16px;
-    font-family: "Pacifico", sans-serif;
+    font-family: var(--font-display);
     font-weight: 400;
     background: url(../img/background.svg) fixed top;
     background-size: cover;
@@ -43,7 +43,7 @@ th {
     height: 70px;
     font-size: 16px;
     color: #fff;
-    font-family: 'Quicksand';
+    font-family: var(--font-body);
     font-weight: 700;
     background: var(--primary);
     border-radius: 50px;
@@ -203,7 +203,7 @@ input[type="checkbox"]:checked+label {
         line-height: 32px;
         border-radius: 30px;
         box-shadow: 0 0 5px 3px rgba(0, 0, 0, .2);
-        font-family: 'Quicksand';
+        font-family: var(--font-body);
     }
 
     .spin {
@@ -369,7 +369,7 @@ input[type="checkbox"]:checked+label {
                 .content-text {
                     font-size: 14px;
                     margin-left: 10px;
-                    font-family: "Quicksand";
+                    font-family: var(--font-body);
                     font-weight: 700;
                 }
             }
@@ -390,7 +390,7 @@ input[type="checkbox"]:checked+label {
 
         .text {
             font-size: 16px;
-            font-family: "Quicksand";
+            font-family: var(--font-body);
             font-weight: 700;
         }
 
@@ -438,7 +438,7 @@ input[type="checkbox"]:checked+label {
                     font-size: 24px;
                     line-height: 24px;
                     font-weight: 700;
-                    font-family: "Quicksand";
+                    font-family: var(--font-body);
                 }
             }
         }
@@ -459,7 +459,7 @@ input[type="checkbox"]:checked+label {
 
         .table-rank {
             width: 100%;
-            font-family: "Quicksand";
+            font-family: var(--font-body);
             font-size: 16px;
             line-height: 20px;
             letter-spacing: 0px;
@@ -542,7 +542,7 @@ input[type="checkbox"]:checked+label {
                     margin-bottom: 20px;
 
                     .point-x {
-                        font-family: 'Quicksand';
+                        font-family: var(--font-body);
                         font-size: 60px;
                         margin-right: -20px;
                     }
@@ -639,7 +639,7 @@ input[type="checkbox"]:checked+label {
             .description {
                 font-size: 16px;
                 margin-bottom: 30px;
-                font-family: "Quicksand";
+                font-family: var(--font-body);
                 font-weight: 700;
             }
 
@@ -658,7 +658,7 @@ input[type="checkbox"]:checked+label {
                     color: #fff;
                     outline: none;
                     font-size: 16px;
-                    font-family: "Quicksand";
+                    font-family: var(--font-body);
                     font-weight: 700;
 
                     &::placeholder {
@@ -739,7 +739,7 @@ input[type="checkbox"]:checked+label {
                     color: #fff;
                     outline: none;
                     font-size: 16px;
-                    font-family: "Quicksand";
+                    font-family: var(--font-body);
                     font-weight: 700;
 
                     &::placeholder {
@@ -764,7 +764,7 @@ input[type="checkbox"]:checked+label {
                 .title-checkbox {
                     display: flex;
                     font-size: 14px;
-                    font-family: "Quicksand";
+                    font-family: var(--font-body);
                     font-weight: 700;
 
                     .text {
@@ -1001,7 +1001,7 @@ input[type="checkbox"]:checked+label {
 
             .text {
                 font-size: 20px;
-                font-family: "Quicksand";
+                font-family: var(--font-body);
                 font-weight: 700;
             }
 

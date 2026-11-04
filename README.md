@@ -29,9 +29,15 @@ The registration form asks for name, email and phone number. Everything is kept 
 
 ## Structure
 
+Groups (marketing, education, ...) are data in `games.json`, not folders, so moving a game between groups never changes its URL. A game can use any stack as long as it ends up as static files under `games/<id>/`.
+
+To add a game: create `games/<id>/`, then add one entry to `games.json`.
+
 ```
 index.html            hub page (assets/hub.js, assets/lang/*.json)
+games.json            list of games: id, group, tech, status; the hub builds its cards from it
 shared/
+  theme.css           the two fonts (display and body) used by every page
   i18n.js             language list, current language, applies data-i18n attributes
   settings.js         per-game settings: defaults + what the player saved
   boot.js             loads a game's config.json, then its scripts

@@ -1,0 +1,9 @@
+/* Shared typography. Two fonts for every page:
+   display (Pacifico): logo and big titles only; body (Quicksand): everything else.
+   Both include Vietnamese. Change a font here and every game follows. */
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500;600;700&display=swap");
+
+:root {
+  --font-display: "Pacifico", "Segoe Script", cursive;
+  --font-body: "Quicksand", "Segoe UI", Arial, sans-serif;
+}

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>MiniGame</title>
     <meta name="description" content="Small HTML5 mini-games for food, drink and online-store campaigns that run in the browser." />
+    <link rel="stylesheet" href="shared/theme.css" />
     <link rel="stylesheet" href="assets/hub.css" />
   </head>
   <body>
@@ -22,45 +23,7 @@
         <p data-i18n="heroText">Open in any browser. Nothing to install.</p>
       </section>
 
-      <section class="cards" aria-label="Games">
-        <article class="card">
-          <div class="card-art" aria-hidden="true">
-            <img src="games/guess-me/assets/img/characters/character-1-normal.7f3e9793.svg" alt="" />
-            <img src="games/guess-me/assets/img/products/product-1.bf2fbdc6.svg" alt="" />
-            <img src="games/guess-me/assets/img/characters/character-3-normal.3fb1a4d6.svg" alt="" />
-          </div>
-          <h2>Guess Me</h2>
-          <p data-i18n="guessMeText">Pick the product the character asks for before time runs out.</p>
-          <ul class="tags">
-            <li>EN</li>
-            <li>VI</li>
-            <li data-i18n="tagScore">Scoring</li>
-          </ul>
-          <a class="play" href="games/guess-me/"><span data-i18n="play">Play</span> &#9654;</a>
-        </article>
-
-        <article class="card">
-          <div class="card-art wheel" aria-hidden="true">
-            <img src="games/spin-wheel/assets/img/circle-inner.svg" alt="" />
-          </div>
-          <h2>Lucky Spin</h2>
-          <p data-i18n="luckySpinText">Spin the wheel to win prizes, with a ranking table.</p>
-          <ul class="tags">
-            <li data-i18n="tagPrizes">Prizes</li>
-            <li data-i18n="tagRanking">Ranking</li>
-          </ul>
-          <a class="play" href="games/spin-wheel/"><span data-i18n="play">Play</span> &#9654;</a>
-        </article>
-
-        <article class="card soon" aria-disabled="true">
-          <div class="card-art" aria-hidden="true">
-            <span class="soon-icon">?</span>
-          </div>
-          <h2 data-i18n="eduTitle">Education games</h2>
-          <p data-i18n="eduText">A set of learning mini-games is on the way.</p>
-          <span class="play disabled" data-i18n="comingSoon">Coming soon</span>
-        </article>
-      </section>
+      <section class="cards" id="cards" aria-label="Games"></section>
     </main>
 
     <footer>
