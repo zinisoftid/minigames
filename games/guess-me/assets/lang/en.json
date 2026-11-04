@@ -63,6 +63,8 @@
   "resetDefaults": "Restore defaults",
 
   "registerTitle": "Register",
+  "registerBack": "Back",
+  "registerSend": "Send",
   "fullName": "Full name",
   "phoneNumber": "Phone number",
   "email": "Email",

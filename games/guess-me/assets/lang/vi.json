@@ -63,6 +63,8 @@
   "resetDefaults": "Khôi phục mặc định",
 
   "registerTitle": "Đăng ký",
+  "registerBack": "Quay lại",
+  "registerSend": "Gửi",
   "fullName": "Họ và tên",
   "phoneNumber": "Số điện thoại",
   "email": "Email",
