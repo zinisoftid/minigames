@@ -27,12 +27,38 @@ Publish the whole folder so the hub page and the "All games" links work (or uplo
 
 The registration form asks for name, email and phone number. Everything is kept in the visitor's own browser (`localStorage`); nothing is sent to a server. If you connect these games to a backend, add your own privacy notice and consent.
 
+## Structure
+
+```
+index.html            hub page (assets/hub.js, assets/lang/*.json)
+shared/
+  i18n.js             language list, current language, applies data-i18n attributes
+  settings.js         per-game settings: defaults + what the player saved
+  boot.js             loads a game's config.json, then its scripts
+games/<game>/
+  index.html          the page, English text inline
+  config.json         defaults: id, settings, products, prizes, ...
+  assets/lang/        en.json, vi.json, ...
+  assets/js|css|img|music
+```
+
+A new game follows the same layout: copy a game folder, edit `config.json`, and include the three shared scripts at the bottom of `index.html`:
+
+```html
+<script src="../../shared/i18n.js"></script>
+<script src="../../shared/settings.js"></script>
+<script src="../../shared/boot.js" data-scripts="assets/js/main.js"></script>
+```
+
+Read values with `GAME_SETTINGS.get("name")` and static data with `GAME_CONFIG`.
+
 ## Customize
 
-- Hub page: `index.html` at the root; its text lives in `assets/lang/*.json`. To add a language, copy `en.json` to `assets/lang/<code>.json` and add one line to `LANGUAGES` in `assets/hub.js`. The default is English. The choice is stored in the `defaultLanguage` cookie, shared with Guess Me.
-- Text and language of Guess Me: `games/guess-me/assets/lang/en.json` and `vi.json`.
-- Products and characters: images in `games/guess-me/assets/img/` and the lists at the top of `assets/js/game.js`.
-- Prizes and wheel: `games/spin-wheel/assets/js/main.js`.
+- **Defaults** (times, limits, prizes, products, characters): edit the game's `config.json`.
+- **Player settings**: Guess Me has a Settings page. It saves only the values the player changed, in `localStorage` (`minigame.guess-me.settings`), so a new default in `config.json` still reaches everyone who left that value alone. "Restore defaults" clears them. There is no `.env` file: these games run in the browser, so every value would be public anyway.
+- **Language**: English is the default and is written inline in each page. The visitor's choice is stored in `localStorage` (`minigame.lang`) and shared by the hub and every game. Elements opt in with `data-i18n`, `data-i18n-placeholder` or `data-i18n-title`.
+- **Add a language**: add one line to `LANGUAGES` in `shared/i18n.js`, then add `<code>.json` (copy `en.json`) to `assets/lang/` of the hub and of each game. A missing key falls back to the English text.
+- **Images and audio**: `games/<game>/assets/img/` and `assets/music/`; Guess Me products and characters are listed in its `config.json`.
 
 ## License
 

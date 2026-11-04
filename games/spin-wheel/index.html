@@ -19,24 +19,25 @@
   </head>
 
   <body>
-    <a class="hub-back" href="../../">&larr; All games</a>
+    <a class="hub-back" href="../../" data-i18n="backAll">&larr; All games</a>
+    <select id="lang-select" class="lang-switch" aria-label="Language"></select>
     <section class="section-wrapper section">
       <div class="header">
         <a class="logo" href="../../" title="All games">
           <img src="./assets/img/logo.svg" alt="logo" />
         </a>
-        <div class="right-item-menu">Menu</div>
+        <div class="right-item-menu" data-i18n="menu">Menu</div>
         <div id="right-box" class="right-bar right-menu">
           <div class="item-close-menu">
             <img src="./assets/img/icon-close.svg" alt="icon close" />
           </div>
-          <div id="to-play" class="item-right-bar active">Play Game</div>
-          <div id="to-rules" class="item-right-bar">Rules</div>
-          <div id="to-price" class="item-right-bar">Prize</div>
-          <div id="to-rank" class="item-right-bar">Ranks</div>
+          <div id="to-play" class="item-right-bar active" data-i18n="navPlay">Play Game</div>
+          <div id="to-rules" class="item-right-bar" data-i18n="navRules">Rules</div>
+          <div id="to-price" class="item-right-bar" data-i18n="navPrize">Prize</div>
+          <div id="to-rank" class="item-right-bar" data-i18n="navRank">Ranks</div>
         </div>
       </div>
-      <div class="title-heading">Play Game</div>
+      <div class="title-heading" data-i18n="titlePlay">Play Game</div>
     </section>
     <section class="section-inner section-play section active">
       <div class="background-inner">
@@ -49,25 +50,25 @@
         <div class="wrap-right">
           <div class="content-right">
             <span class="content-number">01. </span>
-            <span class="content-text"
+            <span class="content-text" data-i18n="playRule1"
               >Press the “Start” button to start playing</span
             >
           </div>
           <div class="content-right">
             <span class="content-number">02. </span>
-            <span class="content-text"
+            <span class="content-text" data-i18n="playRule2"
               >Each player will have 5 spins, after each draw points or rewards
               will be added to the player's account</span
             >
           </div>
           <div class="content-right">
             <span class="content-number">03. </span>
-            <span class="content-text"
+            <span class="content-text" data-i18n="playRule3"
               >Use the points you get to exchange for rewards</span
             >
           </div>
           <div class="inner-footer">
-            <button id="btn-start" class="btn-cus btn-spin">START GAME</button>
+            <button id="btn-start" class="btn-cus btn-spin" data-i18n="startGame">START GAME</button>
           </div>
         </div>
       </div>
@@ -75,7 +76,7 @@
     <section class="section-inner section-playing section">
       <div class="background-inner">
         <div class="countdown-play">
-          <div class="title">Game Start</div>
+          <div class="title" data-i18n="gameStart">Game Start</div>
           <div class="countdown">3</div>
         </div>
         <div class="playing">
@@ -100,7 +101,7 @@
             </div>
           </div>
           <div class="inner-footer">
-            <button id="spin" class="btn-cus btn-spin">START</button>
+            <button id="spin" class="btn-cus btn-spin" data-i18n="spin">START</button>
           </div>
         </div>
       </div>
@@ -113,7 +114,7 @@
           </div>
           <form class="content">
             <div class="content-price">
-              <div id="content-point-title" class="title">Your Points</div>
+              <div id="content-point-title" class="title" data-i18n="yourPoints">Your Points</div>
               <div id="content-point-count" class="point">30</div>
             </div>
             <!-- <div class="box-btn">
@@ -135,7 +136,7 @@
           </div>
           <form class="content">
             <div class="content-price">
-              <div id="content-spin-title" class="title">
+              <div id="content-spin-title" class="title" data-i18n="extraSpin">
                 You Have Extra Spin
               </div>
               <div class="point">
@@ -162,7 +163,7 @@
           </div>
           <form class="content">
             <div class="content-price">
-              <div id="content-gift-title" class="title">
+              <div id="content-gift-title" class="title" data-i18n="receivedGift">
                 You Received a Gift
               </div>
               <div class="gift">
@@ -193,10 +194,10 @@
           </div>
           <form class="content">
             <div class="content-price">
-              <div id="content-message-title" class="title">
+              <div id="content-message-title" class="title" data-i18n="receivedWish">
                 You Received 1 Wish
               </div>
-              <div id="content-message-text" class="message">
+              <div id="content-message-text" class="message" data-i18n="wishDay">
                 Wish you have a wonderful day!
               </div>
             </div>
@@ -218,9 +219,9 @@
             <img src="./assets/img/star.svg" alt="" />
           </div>
           <form class="content">
-            <div class="title">Sorry</div>
+            <div class="title" data-i18n="sorry">Sorry</div>
             <div class="content-price">
-              <div class="message">You have run out of spins!</div>
+              <div class="message" data-i18n="noSpins">You have run out of spins!</div>
             </div>
             <!-- <div class="box-btn">
               <button type="button" class="btn-cus btn-popup btn-login">
@@ -237,20 +238,20 @@
         </div>
         <div class="popup-login">
           <form class="content">
-            <div class="title">LOGIN</div>
-            <div class="description">Enter your phone number to get points</div>
+            <div class="title" data-i18n="login">LOGIN</div>
+            <div class="description" data-i18n="loginDesc">Enter your phone number to get points</div>
             <div class="wrap-input">
               <input
                 id="input-login-tel"
                 class="input-tel"
-                placeholder="Phone Number"
+                placeholder="Phone Number" data-i18n-placeholder="phone"
               />
             </div>
             <div class="box-btn">
-              <button type="button" class="btn-cus btn-popup btn-signup">
+              <button type="button" class="btn-cus btn-popup btn-signup" data-i18n="register">
                 REGISTER
               </button>
-              <button type="submit" class="btn-cus btn-popup btn-sent-point">
+              <button type="submit" class="btn-cus btn-popup btn-sent-point" data-i18n="sendPoint">
                 SEND POINT
               </button>
             </div>
@@ -261,41 +262,41 @@
         </div>
         <div class="popup-signup">
           <form class="content">
-            <div class="title">REGISTER</div>
+            <div class="title" data-i18n="register">REGISTER</div>
             <div class="wrap-input">
               <input
                 id="input-login-tel"
                 class="input-tel"
-                placeholder="Full Name"
+                placeholder="Full Name" data-i18n-placeholder="fullName"
               />
             </div>
             <div class="wrap-input">
               <input
                 id="input-login-tel"
                 class="input-tel"
-                placeholder="Phone Number"
+                placeholder="Phone Number" data-i18n-placeholder="phone"
               />
             </div>
             <div class="wrap-input">
               <input
                 id="input-login-tel"
                 class="input-tel"
-                placeholder="Email"
+                placeholder="Email" data-i18n-placeholder="email"
               />
             </div>
             <div class="wrap-checkbox">
               <input type="checkbox" class="input-check" />
               <label for="custom-checkbox"></label>
               <span class="title-checkbox">
-                I agree with
-                <span id="show-rules" class="text"> the game rules</span>
+                <span data-i18n="agreeWith">I agree with</span>
+                <span id="show-rules" class="text" data-i18n="gameRules"> the game rules</span>
               </span>
             </div>
             <div class="box-btn">
-              <button type="button" class="btn-cus btn-popup btn-back">
+              <button type="button" class="btn-cus btn-popup btn-back" data-i18n="back">
                 BACK
               </button>
-              <button type="submit" class="btn-cus btn-popup btn-sent-point">
+              <button type="submit" class="btn-cus btn-popup btn-sent-point" data-i18n="sendPoint">
                 SEND POINT
               </button>
             </div>
@@ -380,9 +381,9 @@
               />
             </div>
             <div class="price-name">
-              1<span class="name-text">First prize</span>
+              1<span class="name-text" data-i18n="prize1">First prize</span>
             </div>
-            <div class="item-name">Retro TV</div>
+            <div class="item-name" data-i18n="prizeTv">Retro TV</div>
           </div>
           <div class="item-price">
             <div class="background-price">
@@ -393,9 +394,9 @@
               />
             </div>
             <div class="price-name">
-              3<span class="name-text">Second prize</span>
+              3<span class="name-text" data-i18n="prize2">Second prize</span>
             </div>
-            <div class="item-name">Camera</div>
+            <div class="item-name" data-i18n="prizeCamera">Camera</div>
           </div>
           <div class="item-price">
             <div class="background-price">
@@ -406,9 +407,9 @@
               />
             </div>
             <div class="price-name">
-              5<span class="name-text">Third Prize</span>
+              5<span class="name-text" data-i18n="prize3">Third Prize</span>
             </div>
-            <div class="item-name">Voucher Gift</div>
+            <div class="item-name" data-i18n="prizeVoucher">Voucher Gift</div>
           </div>
         </div>
         <span class="text">
@@ -426,10 +427,10 @@
         <table class="table-rank">
           <tr>
             <th>#</th>
-            <th>Full Name</th>
-            <th>Email</th>
-            <th>Phone Number</th>
-            <th>Point</th>
+            <th data-i18n="fullName">Full Name</th>
+            <th data-i18n="emailHead">Email</th>
+            <th data-i18n="phone">Phone Number</th>
+            <th data-i18n="point">Point</th>
           </tr>
           <tr>
             <td>
@@ -439,7 +440,7 @@
                 alt="1"
               />
             </td>
-            <td>Phạm Quốc Toàn</td>
+            <td>Alex Carter</td>
             <td>xxxxxxxxxxx.com</td>
             <td>1234567890</td>
             <td>162</td>
@@ -452,7 +453,7 @@
                 alt="2"
               />
             </td>
-            <td>Trần An Vinh</td>
+            <td>Bianca Rossi</td>
             <td>xxxxxxxxxxx.com</td>
             <td>1234567890</td>
             <td>159</td>
@@ -465,56 +466,56 @@
                 alt="3"
               />
             </td>
-            <td>Võ Thị Thùy Anh</td>
+            <td>Chen Wei</td>
             <td>xxxxxxxxxxx.com</td>
             <td>1234567890</td>
             <td>154</td>
           </tr>
           <tr>
             <td>4</td>
-            <td>Lê Hải Đăng</td>
+            <td>Dana Whitfield</td>
             <td>xxxxxxxxxxx.com</td>
             <td>1234567890</td>
             <td>149</td>
           </tr>
           <tr>
             <td>5</td>
-            <td>Võ Thiên Thành</td>
+            <td>Ivan Petrov</td>
             <td>xxxxxxxxxxx.com</td>
             <td>1234567890</td>
             <td>138</td>
           </tr>
           <tr>
             <td>6</td>
-            <td>Võ Thiên Thành</td>
+            <td>Jules Martin</td>
             <td>xxxxxxxxxxx.com</td>
             <td>1234567890</td>
             <td>123</td>
           </tr>
           <tr>
             <td>7</td>
-            <td>Lê Tường An</td>
+            <td>Farah Haddad</td>
             <td>xxxxxxxxxxx.com</td>
             <td>1234567890</td>
             <td>121</td>
           </tr>
           <tr>
             <td>8</td>
-            <td>Phạm Ngọc Cường</td>
+            <td>Emil Novak</td>
             <td>xxxxxxxxxxx.com</td>
             <td>1234567890</td>
             <td>118</td>
           </tr>
           <tr>
             <td>9</td>
-            <td>Phan Đăng Quốc Phong</td>
+            <td>Gabriel Costa</td>
             <td>xxxxxxxxxxx.com</td>
             <td>1234567890</td>
             <td>109</td>
           </tr>
           <tr>
             <td>10</td>
-            <td>Trần Đăng Khoa</td>
+            <td>Hana Suzuki</td>
             <td>xxxxxxxxxxx.com</td>
             <td>1234567890</td>
             <td>105</td>
@@ -550,18 +551,23 @@
     </div>
     <audio id="musicPlayer" loop>
       <source src="./assets/music/sound-track.wav" type="audio/mpeg" />
-      Trình duyệt của bạn không hỗ trợ thẻ audio.
+      Your browser does not support the audio tag.
     </audio>
     <audio id="soundSpin">
       <source src="./assets/music/sound-spin.wav" type="audio/mpeg" />
-      Trình duyệt của bạn không hỗ trợ thẻ audio.
+      Your browser does not support the audio tag.
     </audio>
     <audio id="soundPrice">
       <source src="./assets/music/sound-popup.wav" type="audio/mpeg" />
-      Trình duyệt của bạn không hỗ trợ thẻ audio.
+      Your browser does not support the audio tag.
     </audio>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="./assets/js/main.js"></script>
+    <script src="../../shared/i18n.js"></script>
+    <script src="../../shared/settings.js"></script>
+    <script
+      src="../../shared/boot.js"
+      data-scripts="assets/js/main.js"
+    ></script>
   </body>
 </html>

@@ -1,68 +1,17 @@
 var SPIN_WHEEL = SPIN_WHEEL || {};
-SPIN_WHEEL.countDownTimer = 3;
-SPIN_WHEEL.countRotation = 10;
-let USER_SPIN = 5;
+// Defaults come from config.json through shared/boot.js (GAME_SETTINGS, GAME_CONFIG).
+SPIN_WHEEL.countDownTimer = GAME_SETTINGS.get("countDownTimer");
+SPIN_WHEEL.countRotation = GAME_SETTINGS.get("countRotation");
+let USER_SPIN = GAME_SETTINGS.get("initialSpins");
 let USER_POINT = 0;
-PARTS = {
-  part1: {
-    title: "You have one more spin",
-    point: null,
-    gift: null,
-    message: null,
-    spin: 1,
-  },
-  part2: {
-    title: "You receive a good wish",
-    point: null,
-    gift: null,
-    message: "Wishing you have a good day",
-    spin: null,
-  },
-  part3: {
-    title: "You receive a gift",
-    point: null,
-    gift: "1 Lancome",
-    message: null,
-    spin: null,
-  },
-  part4: {
-    title: "The reward points achieved",
-    point: 30,
-    gift: null,
-    message: null,
-    spin: null,
-  },
-  part5: {
-    title: "You have 3 more spin",
-    point: null,
-    gift: null,
-    message: null,
-    spin: 3,
-  },
-  part6: {
-    title: "You receive a good wish",
-    point: null,
-    gift: null,
-    message: "Wish you luck next time",
-    spin: null,
-  },
-  part7: {
-    title: "You receive a gift",
-    point: null,
-    gift: "2 Lancome",
-    message: null,
-    spin: null,
-  },
-  part8: {
-    title: "The reward points achieved",
-    point: 50,
-    gift: null,
-    message: null,
-    spin: null,
-  },
-};
+// Wheel segments in clockwise order; title, message and gift are language keys.
+const PARTS = {};
+GAME_CONFIG.parts.forEach(function (part, index) {
+  PARTS["part" + (index + 1)] = part;
+});
 
 $(document).ready(function () {
+  SPIN_WHEEL.initLanguage();
   SPIN_WHEEL.navigate();
   SPIN_WHEEL.startGame();
   SPIN_WHEEL.showUserSpin();
@@ -80,11 +29,11 @@ $(document).ready(function () {
 
 SPIN_WHEEL.navigate = function () {
   $("#to-play").on("click", function () {
-    SPIN_WHEEL.handleNavigate("play", "Play game");
+    SPIN_WHEEL.handleNavigate("play", "titlePlay");
   });
 
   $("#to-rules").on("click", function () {
-    SPIN_WHEEL.handleNavigate("rules", "Rules");
+    SPIN_WHEEL.handleNavigate("rules", "titleRules");
   });
 
   $("#show-rules").on("click", function () {
@@ -98,20 +47,20 @@ SPIN_WHEEL.navigate = function () {
       $(".popup-login").removeClass("active");
       $(".popup-signup").removeClass("active");
     });
-    SPIN_WHEEL.handleNavigate("rules", "Rules");
+    SPIN_WHEEL.handleNavigate("rules", "titleRules");
   });
 
   $("#to-price").on("click", function () {
-    SPIN_WHEEL.handleNavigate("price", "Prizes");
+    SPIN_WHEEL.handleNavigate("price", "titlePrize");
   });
 
   $("#to-rank").on("click", function () {
-    SPIN_WHEEL.handleNavigate("rank", "Ranking");
+    SPIN_WHEEL.handleNavigate("rank", "titleRank");
   });
 };
 
-SPIN_WHEEL.handleNavigate = function (href, title) {
-  $(".title-heading").text(title);
+SPIN_WHEEL.handleNavigate = function (href, titleKey) {
+  $(".title-heading").attr("data-i18n", titleKey).text(SPIN_WHEEL.t(titleKey));
   $(".item-right-bar").removeClass("active");
   $(`#to-${href}`).addClass("active");
   $(".section").removeClass("active");
@@ -140,7 +89,7 @@ SPIN_WHEEL.countdown = function () {
       clearInterval(countdownInterval);
       $(".countdown-play").removeClass("active");
       $(".playing").addClass("active");
-      $(".countdown").text("3");
+      $(".countdown").text(SPIN_WHEEL.countDownTimer);
     }
   }
   const countdownInterval = setInterval(updateCountdown, 1000);
@@ -175,21 +124,21 @@ SPIN_WHEEL.getRandomRotation = function () {
 SPIN_WHEEL.showPopupPrice = function (part) {
   if (part.point) {
     $("#price-point").addClass("active");
-    $("#content-point-title").text(part.title);
+    $("#content-point-title").text(SPIN_WHEEL.t(part.title));
     $("#content-point-count").text(part.point);
     USER_POINT = USER_POINT + part.point;
     setTimeout(SPIN_WHEEL.showUserPoint, 6000);
   } else if (part.gift) {
     $("#price-gift").addClass("active");
-    $("#content-gift-title").text(part.title);
-    $("#content-gift-name").text(part.gift);
+    $("#content-gift-title").text(SPIN_WHEEL.t(part.title));
+    $("#content-gift-name").text(SPIN_WHEEL.t("giftBox", part.gift));
   } else if (part.message) {
     $("#price-message").addClass("active");
-    $("#content-message-title").text(part.title);
-    $("#content-message-text").text(part.message);
+    $("#content-message-title").text(SPIN_WHEEL.t(part.title));
+    $("#content-message-text").text(SPIN_WHEEL.t(part.message));
   } else {
     $("#price-spin").addClass("active");
-    $("#content-spin-title").text(part.title);
+    $("#content-spin-title").text(SPIN_WHEEL.t(part.title, part.spin));
     $("#content-spin-count").text(part.spin);
     USER_SPIN = USER_SPIN + part.spin;
     setTimeout(SPIN_WHEEL.showUserSpin, 6000);
@@ -297,13 +246,12 @@ SPIN_WHEEL.sound = function () {
       setTimeout(() => {
         $("#soundPrice")[0].play();
         isSpinning = false;
-        isSpinning = false;
       }, 5500);
     }
   });
 };
 
-// ẩn hiện menu khi thay đổi kích thước màn hình
+// Show the side menu as a drawer on narrow screens
 SPIN_WHEEL.toggleMenu = function () {
   let screenWidth = $(window).width();
   if (screenWidth < 768) {
@@ -315,7 +263,7 @@ SPIN_WHEEL.toggleMenu = function () {
   }
 };
 
-// xử lý mở đóng menu (ở màn hình mobile, tablet)
+// Open and close the drawer (mobile and tablet)
 SPIN_WHEEL.openMenu = function () {
   $(".right-item-menu").on("click", function () {
     $(".right-menu").addClass("active");
@@ -328,11 +276,71 @@ SPIN_WHEEL.closeMenu = function () {
   });
 };
 
-// cập nhật số spin và số point của user
+// Show the player's remaining spins and points
 SPIN_WHEEL.showUserSpin = function () {
   $("#user-spin").text(USER_SPIN);
 };
 
 SPIN_WHEEL.showUserPoint = function () {
   $("#user-point").text(USER_POINT);
+};
+
+// Language: dictionaries are assets/lang/<code>.json. English is always loaded as the
+// fallback so a missing key in another language still shows readable text.
+SPIN_WHEEL.dictionary = {};
+SPIN_WHEEL.fallback = {};
+
+SPIN_WHEEL.t = function (key) {
+  let text = SPIN_WHEEL.dictionary[key] || SPIN_WHEEL.fallback[key] || key;
+  for (let i = 1; i < arguments.length; i++) {
+    text = text.replace("$" + i, arguments[i]);
+  }
+  return text;
+};
+
+SPIN_WHEEL.loadDictionary = function (code) {
+  return fetch("assets/lang/" + code + ".json").then(function (response) {
+    return response.json();
+  });
+};
+
+SPIN_WHEEL.applyLanguage = function () {
+  MiniLang.apply(document, function (key) {
+    return key === "playRule2"
+      ? SPIN_WHEEL.t(key, GAME_SETTINGS.get("initialSpins"))
+      : SPIN_WHEEL.t(key);
+  });
+  $("#lang-select").attr("aria-label", SPIN_WHEEL.t("language"));
+};
+
+SPIN_WHEEL.setLanguage = function (code) {
+  MiniLang.set(code);
+  const wanted = code === MiniLang.DEFAULT ? [] : [SPIN_WHEEL.loadDictionary(code)];
+  return Promise.all(wanted)
+    .then(function (loaded) {
+      SPIN_WHEEL.dictionary = loaded[0] || SPIN_WHEEL.fallback;
+      SPIN_WHEEL.applyLanguage();
+    })
+    .catch(function (error) {
+      console.error("Could not load language", code, error);
+    });
+};
+
+SPIN_WHEEL.initLanguage = function () {
+  const select = $("#lang-select");
+  Object.keys(MiniLang.LANGUAGES).forEach(function (code) {
+    select.append($("<option>").val(code).text(MiniLang.LANGUAGES[code]));
+  });
+  select.val(MiniLang.get());
+  select.on("change", function () {
+    SPIN_WHEEL.setLanguage(select.val());
+  });
+  SPIN_WHEEL.loadDictionary(MiniLang.DEFAULT)
+    .then(function (english) {
+      SPIN_WHEEL.fallback = english;
+      return SPIN_WHEEL.setLanguage(MiniLang.get());
+    })
+    .catch(function (error) {
+      console.error("Could not load language files", error);
+    });
 };

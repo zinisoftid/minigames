@@ -1,0 +1,18 @@
+{
+  "id": "spin-wheel",
+  "settings": {
+    "countDownTimer": 3,
+    "countRotation": 10,
+    "initialSpins": 5
+  },
+  "parts": [
+    { "title": "popupMoreSpins", "spin": 1 },
+    { "title": "popupWish", "message": "wishDay" },
+    { "title": "popupGift", "gift": 1 },
+    { "title": "popupPoints", "point": 30 },
+    { "title": "popupMoreSpins", "spin": 3 },
+    { "title": "popupWish", "message": "wishLuck" },
+    { "title": "popupGift", "gift": 2 },
+    { "title": "popupPoints", "point": 50 }
+  ]
+}
