@@ -29,50 +29,50 @@ class Minigame {
         this.initTimeRemainder / 10,
     };
     this.gameSound = {
-      audioBackground: audioAssetsPath + "bg_sound.mp3",
-      audioFail: audioAssetsPath + "wrong.mp3",
+      audioBackground: audioAssetsPath + "bg_sound.wav",
+      audioFail: audioAssetsPath + "wrong.wav",
       maxVolumn: 1,
       // Audio ratio (speed up when level-up)
       audioRatio: 1,
     };
     this.listProducts = getCookie("arrProducts") !== '' ? JSON.parse(getCookie("arrProducts")) : [
       {
-        url: productsAssetsPath + "product-1.bf2fbdc6.png",
+        url: productsAssetsPath + "product-1.bf2fbdc6.svg",
         title: "Burberry",
         score: this.productScore,
       },
       {
-        url: productsAssetsPath + "product-2.40aeec66.png",
+        url: productsAssetsPath + "product-2.40aeec66.svg",
         title: "Lancome",
         score: this.productScore,
       },
       {
-        url: productsAssetsPath + "product-3.5b794844.png",
+        url: productsAssetsPath + "product-3.5b794844.svg",
         title: "Bobbi brown",
         score: this.productScore,
       },
       {
-        url: productsAssetsPath + "product-4.d81a34a7.png",
+        url: productsAssetsPath + "product-4.d81a34a7.svg",
         title: "Shiseido",
         score: this.productScore,
       },
     ];
     this.listCharacters = getCookie("arrCharacters") !== '' ? JSON.parse(getCookie("arrCharacters")) : [
       {
-        url: characterAssetsPath + "character-1-normal.7f3e9793.png",
-        activeUrl: characterAssetsPath + "character-1-active.8d1d9f2a.png",
+        url: characterAssetsPath + "character-1-normal.7f3e9793.svg",
+        activeUrl: characterAssetsPath + "character-1-active.8d1d9f2a.svg",
       },
       {
-        url: characterAssetsPath + "character-2-normal.8a67d7ee.png",
-        activeUrl: characterAssetsPath + "character-2-active.ed61dfa6.png",
+        url: characterAssetsPath + "character-2-normal.8a67d7ee.svg",
+        activeUrl: characterAssetsPath + "character-2-active.ed61dfa6.svg",
       },
       {
-        url: characterAssetsPath + "character-3-normal.3fb1a4d6.png",
-        activeUrl: characterAssetsPath + "character-3-active.1f222b79.png",
+        url: characterAssetsPath + "character-3-normal.3fb1a4d6.svg",
+        activeUrl: characterAssetsPath + "character-3-active.1f222b79.svg",
       },
       {
-        url: characterAssetsPath + "character-4-normal.3ab5544a.png",
-        activeUrl: characterAssetsPath + "character-4-active.f36fa8b6.png",
+        url: characterAssetsPath + "character-4-normal.3ab5544a.svg",
+        activeUrl: characterAssetsPath + "character-4-active.f36fa8b6.svg",
       },
     ];
     this.listProductNames = this.listProducts.map((product) =>

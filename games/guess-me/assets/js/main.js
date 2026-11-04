@@ -506,14 +506,14 @@ GUESSME.createSettingPage = () => {
       .val(product.title);
 
     const deleteIcon = $("<img>").attr({
-      src: "assets/img/register/ico-close.48084f2c.png",
+      src: "assets/img/register/ico-close.48084f2c.svg",
       alt: "delete-icon",
     });
 
     deleteIcon.addClass("delete-icon");
 
     const previewIcon = $("<img>").attr({
-      src: "assets/img/play-page/game-element-15-1.png",
+      src: "assets/img/play-page/game-element-15-1.svg",
       alt: "preview-product-icon",
     });
 
@@ -584,12 +584,12 @@ GUESSME.createSettingPage = () => {
     const imgUpload = $("<i>").addClass("fa-solid fa-upload upload-icon");
 
     const imgDelete = $("<img>")
-      .attr("src", "assets/img/register/ico-close.48084f2c.png")
+      .attr("src", "assets/img/register/ico-close.48084f2c.svg")
       .attr("alt", "delete-icon")
       .addClass("delete-icon");
 
     const previewIcon = $("<img>").attr({
-      src: "assets/img/play-page/game-element-15-1.png",
+      src: "assets/img/play-page/game-element-15-1.svg",
       alt: "preview-character-icon",
     });
 
@@ -854,7 +854,7 @@ GUESSME.addCharacter = () => {
     const imgUpload = $("<i>").addClass("fa-solid fa-upload upload-icon");
 
     const imgDelete = $("<img>")
-      .attr("src", "./assets/img/register/ico-close.48084f2c.png")
+      .attr("src", "./assets/img/register/ico-close.48084f2c.svg")
       .attr("alt", "delete-icon")
       .addClass("delete-icon");
 
@@ -973,7 +973,7 @@ GUESSME.addProduct = () => {
       .val("");
 
     const deleteIcon = $("<img>").attr({
-      src: "./assets/img/register/ico-close.48084f2c.png",
+      src: "./assets/img/register/ico-close.48084f2c.svg",
       alt: "delete-icon",
     });
 

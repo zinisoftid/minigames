@@ -14,7 +14,7 @@ body {
   font-size: 16px;
   font-family: "Quicksand", sans-serif;
   font-weight: 400;
-  background: url("../img/general/bg-body.839ede93.jpg") top;
+  background: url("../img/general/bg-body.839ede93.svg") top;
   background-size: cover;
 }
 
@@ -125,7 +125,7 @@ button:focus {
 }
 
 .main-bottom-content {
-  background: url("../img/general/bg-page-content.6a3a2509.png") no-repeat top;
+  background: url("../img/general/bg-page-content.6a3a2509.svg") no-repeat top;
   background-size: cover;
   width: 100%;
   border-radius: 30px;
@@ -248,7 +248,7 @@ button:focus {
 }
 
 .register-wrapper {
-  background: url("../../assets/img/register/Rectangle.png") no-repeat;
+  background: url("../../assets/img/register/Rectangle.svg") no-repeat;
   background-size: 100% 100%;
   border-radius: 30px;
   max-width: 826px;
@@ -276,7 +276,7 @@ button:focus {
 }
 
 .register-button-close {
-  background: url("../img/register/ico-close.48084f2c.png") no-repeat 50%;
+  background: url("../img/register/ico-close.48084f2c.svg") no-repeat 50%;
   width: 94px;
   height: 94px;
   display: inline-block;
@@ -361,12 +361,12 @@ input:-webkit-autofill:active {
   background-size: contain;
   width: 70px;
   height: 70px;
-  background-image: url("../img/register/download-3.png");
+  background-image: url("../img/register/download-3.svg");
   cursor: pointer;
 }
 
 .checkbox-icon-active {
-  background-image: url("../img/register/download-4.png");
+  background-image: url("../img/register/download-4.svg");
   cursor: pointer;
 }
 
@@ -413,7 +413,7 @@ input:-webkit-autofill:active {
 }
 
 .timer-site {
-  background: url("../img/play-page/game-element.f3940bd8.png") no-repeat;
+  background: url("../img/play-page/game-element.f3940bd8.svg") no-repeat;
   width: 307px;
   height: 86px;
   padding: 32px 14px 0 70px;
@@ -421,7 +421,7 @@ input:-webkit-autofill:active {
 
 .timer-range {
   height: 22px;
-  background: url("../img/play-page/download.png") repeat-x;
+  background: url("../img/play-page/download.svg") repeat-x;
   width: 100%;
   border-radius: 24px;
 }
@@ -438,7 +438,7 @@ input:-webkit-autofill:active {
 .current-score {
   height: 64px;
   width: 203px;
-  background: url("../img/play-page/download-2.png") no-repeat;
+  background: url("../img/play-page/download-2.svg") no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -513,7 +513,7 @@ input:-webkit-autofill:active {
 
 .number-correct {
   position: absolute;
-  background: url("../img/play-page/download-5.png") no-repeat;
+  background: url("../img/play-page/download-5.svg") no-repeat;
   width: 120px;
   height: 120px;
   line-height: 120px;
@@ -572,7 +572,7 @@ input:-webkit-autofill:active {
   right: 0;
   width: 168px;
   height: 177px;
-  background: url("../img/play-page/download-6.png") no-repeat;
+  background: url("../img/play-page/download-6.svg") no-repeat;
   font-weight: 700;
   text-transform: uppercase;
   font-size: 20px;
@@ -753,7 +753,7 @@ input:-webkit-autofill:active {
 }
 
 .restart-game-wrapper {
-  background: url("../../assets/img/register/Rectangle.png") no-repeat;
+  background: url("../../assets/img/register/Rectangle.svg") no-repeat;
   background-size: 100% 100%;
   width: 824px;
   height: 560px;
@@ -786,7 +786,7 @@ input:-webkit-autofill:active {
 }
 
 .restart-game-button-close {
-  background: url("../img/register/ico-close.48084f2c.png") no-repeat 50%;
+  background: url("../img/register/ico-close.48084f2c.svg") no-repeat 50%;
   width: 94px;
   height: 94px;
   display: inline-block;
@@ -875,15 +875,15 @@ input:-webkit-autofill:active {
 }
 
 .music-icon {
-  background: url("../img/toolbar/download-10.png") no-repeat;
+  background: url("../img/toolbar/download-10.svg") no-repeat;
 }
 
 .volumn-icon {
-  background: url("../img/toolbar/download-11.png") no-repeat;
+  background: url("../img/toolbar/download-11.svg") no-repeat;
 }
 
 .pause-icon {
-  background: url("../img/toolbar/download-12.png") no-repeat;
+  background: url("../img/toolbar/download-12.svg") no-repeat;
 }
 
 .toolbar-icon-toggle {
@@ -892,7 +892,7 @@ input:-webkit-autofill:active {
 
 /* ------------------------------------------- Mobile mode ------------------------------------------- */
 .mobile-menu-icon {
-  background: url("../../assets/img/general/game-element-03.png") no-repeat;
+  background: url("../../assets/img/general/game-element-03.svg") no-repeat;
   width: 64px;
   height: 100%;
   flex-shrink: 0;
@@ -902,7 +902,7 @@ input:-webkit-autofill:active {
 }
 
 .mobile-icon-close {
-  background: url("../../assets/img/register/ico-close.48084f2c.png") no-repeat 50%;
+  background: url("../../assets/img/register/ico-close.48084f2c.svg") no-repeat 50%;
   width: 52px;
   height: 52px;
   display: inline-block;

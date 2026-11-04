@@ -14,7 +14,7 @@ body {
     font-size: 16px;
     font-family: "Pacifico", sans-serif;
     font-weight: 400;
-    background: url(../img/background.png) fixed top;
+    background: url(../img/background.svg) fixed top;
     background-size: cover;
 }
 
@@ -64,13 +64,13 @@ label {
     margin-right: 10px;
     border-radius: 50%;
     background: transparent;
-    background-image: url('../img/icon-not-check.png');
+    background-image: url('../img/icon-not-check.svg');
     background-size: cover;
     box-shadow: 0 0 5px 3px rgba(0, 0, 0, .2);
 }
 
 input[type="checkbox"]:checked+label {
-    background-image: url('../img/icon-check.png');
+    background-image: url('../img/icon-check.svg');
 }
 
 /* section-wrapper */
@@ -167,7 +167,7 @@ input[type="checkbox"]:checked+label {
 
 .background-inner {
     padding: 10px;
-    background: url(../img/background-inner.png) no-repeat top;
+    background: url(../img/background-inner.svg) no-repeat top;
     background-size: cover;
     border-radius: 30px;
     box-shadow: 0 0 5px 3px rgba(0, 0, 0, .2);
@@ -192,7 +192,7 @@ input[type="checkbox"]:checked+label {
     .item-count {
         height: 32px;
         width: 101.5px;
-        background: url(../img/background-item.png);
+        background: url(../img/background-item.svg);
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center center;
@@ -220,7 +220,7 @@ input[type="checkbox"]:checked+label {
             justify-content: center;
             height: 240px;
             width: 240px;
-            background: url(../img/oval.png);
+            background: url(../img/oval.svg);
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center center;
@@ -228,7 +228,7 @@ input[type="checkbox"]:checked+label {
             .circle-inner {
                 height: 205px;
                 width: 205px;
-                background: url(../img/circle-inner.png);
+                background: url(../img/circle-inner.svg);
                 background-repeat: no-repeat;
                 background-size: contain;
                 background-position: center center;
@@ -239,7 +239,7 @@ input[type="checkbox"]:checked+label {
                 position: absolute;
                 height: 250px;
                 width: 250px;
-                background: url(../img/circle-outer.png);
+                background: url(../img/circle-outer.svg);
                 background-repeat: no-repeat;
                 background-size: contain;
                 background-position: center center;
@@ -412,7 +412,7 @@ input[type="checkbox"]:checked+label {
                     justify-content: center;
                     width: 118px;
                     height: 100px;
-                    background: url(../img/background-price.png);
+                    background: url(../img/background-price.svg);
                     background-repeat: no-repeat;
                     background-size: contain;
                     background-position: center center;
@@ -496,7 +496,7 @@ input[type="checkbox"]:checked+label {
         left: 50%;
         transform: translate(-50%, -50%);
         width: 90%;
-        background: url(../img/background-popup.png) no-repeat;
+        background: url(../img/background-popup.svg) no-repeat;
         border-radius: 30px;
         scale: 0;
         opacity: 0;
@@ -611,7 +611,7 @@ input[type="checkbox"]:checked+label {
         left: 50%;
         transform: translate(-50%, -50%);
         Width: 90%;
-        background: url(../img/background-popup.png) no-repeat;
+        background: url(../img/background-popup.svg) no-repeat;
         border-radius: 30px;
         scale: 0;
         opacity: 0;
@@ -699,7 +699,7 @@ input[type="checkbox"]:checked+label {
         left: 50%;
         transform: translate(-50%, -50%);
         Width: 90%;
-        background: url(../img/background-popup.png) no-repeat;
+        background: url(../img/background-popup.svg) no-repeat;
         border-radius: 30px;
         scale: 0;
         opacity: 0;
@@ -1033,7 +1033,7 @@ input[type="checkbox"]:checked+label {
             left: 50%;
             transform: translate(-50%, -50%);
             width: 90%;
-            background: url(../img/background-popup.png) no-repeat;
+            background: url(../img/background-popup.svg) no-repeat;
             border-radius: 30px;
             scale: 0;
             opacity: 0;

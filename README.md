@@ -7,8 +7,6 @@ Two small HTML5 marketing mini-games you can open in a browser or host as static
 | Guess Me | Match the product the character asks for before time runs out. English and Vietnamese. | [games/guess-me](games/guess-me) |
 | Lucky Spin | Spin the wheel to win prizes, with a rank table. | [games/spin-wheel](games/spin-wheel) |
 
-![Guess Me preview](docs/guess-me-preview.png)
-
 ## Run locally
 
 Any static server works. From this folder:
